@@ -1,6 +1,6 @@
 {
   "name": "cybersportscore",
-  "homepage": "https://kleale.github.io",
+  "homepage": "https://kleale.github.io/cybersportscore/",
   "private": true,
   "version": "0.1.1",
   "type": "module",
@@ -8,6 +8,7 @@
     "dev": "vite --host",
     "build": "vue-tsc && vite build",
     "preview": "vite preview",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
