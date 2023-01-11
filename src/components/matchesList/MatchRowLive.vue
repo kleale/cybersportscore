@@ -46,8 +46,7 @@ import { ChevronDownIcon, ChevronRightIcon, ClockIcon } from '@heroicons/vue/20/
           </div>
         </div>
 
-        <a
-          href="./match/1"
+        <router-link to="/match"
           class="flex justify-center px-1 border-x border-gray-300 dark:border-gray-700 flex-col w-16 md:w-20 md:h-10 md:px-2">
           <div class="flex items-center justify-center">
             <ClockIcon class="h-3" />
@@ -56,7 +55,7 @@ import { ChevronDownIcon, ChevronRightIcon, ClockIcon } from '@heroicons/vue/20/
           <div class="dark:text-apple justify-center text-center text-sm font-extrabold">
             38-45
           </div>
-        </a>
+        </router-link>
 
         <div class="flex grow flex-1 content-center md:items-center text-left gap-1 md:gap-5 flex-col md:flex-row">
           <a href="#" class="flex h-6 w-6">

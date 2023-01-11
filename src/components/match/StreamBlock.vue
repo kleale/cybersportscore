@@ -19,10 +19,8 @@
     </div>
 
 
-    <button id="dropdownDefault" data-dropdown-toggle="dropdown"
-      class="text-white bg-[#3A4C69] focus:ring-2 focus:outline-none focus:ring-apple font-medium text-sm px-3 py-1.5 inline-flex items-center 
-      dark:focus:ring-apple"
-      type="button">
+    <button id="dropdownDefault" data-dropdown-toggle="dropdown" class="text-white bg-[#3A4C69] focus:ring-2 focus:outline-none focus:ring-apple font-medium text-sm px-3 py-1.5 inline-flex items-center 
+      dark:focus:ring-apple" type="button">
 
       <div class="flex mr-2 items-center grow gap-2">
         <img class="h-7" src="../../assets/none/tourNoLogo.svg" alt="tourName" />
@@ -60,8 +58,15 @@
       </ul>
     </div>
 
-    <div class="flex items-center justify-center grow h-[310px] text-gray-700 opacity-20 text-[180px] overflow-hidden leading-none">
+
+    <!-- <div class="flex items-center justify-center grow h-[310px] text-gray-700 opacity-20 text-[180px] overflow-hidden leading-none">
       stream
+    </div> -->
+
+    <div class="flex items-center justify-center grow h-[310px] overflow-hidden leading-none">
+      <iframe src="https://player.twitch.tv/?channel=betboom_ru&parent=kleale.github.io&muted=true" height="310px" width="100%"
+        allowfullscreen>
+      </iframe>
     </div>
 
   </div>
