@@ -47,7 +47,7 @@ import { ChevronDownIcon, ChevronRightIcon, ClockIcon } from '@heroicons/vue/20/
         </div>
 
         <a
-          href="/match/1"
+          href="./match/1"
           class="flex justify-center px-1 border-x border-gray-300 dark:border-gray-700 flex-col w-16 md:w-20 md:h-10 md:px-2">
           <div class="flex items-center justify-center">
             <ClockIcon class="h-3" />

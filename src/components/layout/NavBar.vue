@@ -29,13 +29,16 @@
                     <button type="button"
                         class="py-1.5 px-2 mr-1 text-xs font-medium text-gray-900 focus:outline-none bg-white rounded-md border
                      border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 
-                     dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-apple dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">15:12
-                        MSK</button>
+                     dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-apple dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">15:12&nbsp;MSK</button>
                     <button id="dropdownDefault" data-dropdown-toggle="dropdownId" type="button"
                         class="flex py-1.5 px-2 mr-1 text-xs font-medium text-gray-900 focus:outline-none bg-white rounded-md border
                      border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 
                      dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-apple dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">RU
-                     <svg class="ml-2 w-4 h-4" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
+                        <svg class="ml-2 w-4 h-4" aria-hidden="true" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg></button>
 
                     <div id="dropdownId"
                         class="hidden z-10 w-26 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700">
@@ -79,15 +82,15 @@
                             <MenuButton
                                 class="flex rounded-full bg-gray-800 text-sm  focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
                                 <span class="sr-only">Open user menu</span>
-                                <!-- <img class="h-8 w-8 rounded-full"
+                                <img class="h-8 w-8 rounded-full"
                                     src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                                    alt="" /> -->
-                                    <svg aria-hidden="true"
-                            class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
-                            fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
-                                clip-rule="evenodd"></path>
-                        </svg>
+                                    alt="" />
+                                <!-- <svg aria-hidden="true"
+                                    class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+                                    fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
+                                        clip-rule="evenodd"></path>
+                                </svg> -->
                             </MenuButton>
                         </div>
                         <transition enter-active-class="transition ease-out duration-100"
@@ -120,7 +123,7 @@
                         </transition>
                     </Menu>
                     <button v-else type="submit"
-                        class="group ml-2 relative flex w-full justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+                        class="group ml-2 relative flex w-full justify-center rounded-md border border-transparent bg-indigo-600 py-1 px-2 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
                         <span class="flex items-center pr-3">
                             <LockClosedIcon class="h-5 w-5 text-indigo-500 group-hover:text-indigo-400"
                                 aria-hidden="true" />
@@ -153,6 +156,6 @@ const navigation = [
     { name: 'Матч', href: '/match/1', current: false },
 ]
 
-const isAuth = ref(true)
+const isAuth = ref(false)
 
 </script>

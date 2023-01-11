@@ -6,10 +6,10 @@ import NavBar from './components/layout/NavBar.vue'
 <template>
   <div class="max-w-6xl relative" style="margin: 0 auto">
     <noindex>
-      <a rel="nofollow" class="abr yaadstracker" target="_blank" href="/ru/go?n=189" id="esn-01"
+      <a rel="nofollow" class="abr yaadstracker" target="_blank" href="#" id="esn-01"
         style="background-image:url(https://escorenews.com/media/a/banner189.gif)">
       </a>
-      <a rel="nofollow" class="abr abr2 yaadstracker" target="_blank" href="/ru/go?n=189" id="esn-01"
+      <a rel="nofollow" class="abr abr2 yaadstracker" target="_blank" href="#" id="esn-01"
         style="background-image:url(https://escorenews.com/media/a/banner189.gif)">
       </a>
     </noindex>
