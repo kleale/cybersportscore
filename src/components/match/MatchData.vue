@@ -9,7 +9,7 @@
         <div
           class="flex grow flex-1 justify-end items-end gap-1 md:gap-3 flex-col md:flex-row-reverse md:items-center md:justify-start">
           <div class="flex gap-2 items-center relative">
-            <div class="flex gap-1 absolute right-[25px] md:hidden">
+            <div class="flex gap-1 md:hidden">
               <div
                 class="border border-yellow-300 text-[9px] px-1 rounded-sm text-yellow-300 font-bold leading-4 h-[18px]">
                 13k
