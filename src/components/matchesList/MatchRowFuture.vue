@@ -41,13 +41,13 @@
 
       </div>
       <div class="flex items-center w-[75px] md:w-[102px] justify-end gap-3 pr-3">
+        <div class="flex w-7">
+          <img class="w-7" src="../../assets/none/tourNoLogo.svg" alt="tourName" />
+        </div>
         <div class="flex flex-col items-center">
           <div class="flex font-bold flex-col text-xs dark:text-gray-300 leading-4">BO3</div>
           <span class="text-[11px] leading-none font-semibold mt-0.5 w-6
              px-0.5 py-0.5 rounded bg-gray-300 text-black text-center">0:0</span>
-        </div>
-        <div class="flex">
-          <img class="h-7" src="../../assets/none/tourNoLogo.svg" alt="tourName" />
         </div>
       </div>
     </div>

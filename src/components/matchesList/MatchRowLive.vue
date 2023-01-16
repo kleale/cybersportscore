@@ -29,7 +29,7 @@ import { ChevronDownIcon, ChevronRightIcon, ClockIcon } from '@heroicons/vue/20/
               </div>
             </div>
             <a href="#" class="flex h-6 w-6">
-              <img class="h-6 w-6" src="../../assets/none/teamNoLogo.svg" alt="teamName" />
+              <img class="h-6 max-w-full" src="../../assets/none/teamNoLogo.svg" alt="teamName" />
             </a>
           </div>
           <a href="#" class="flex text-right text-white text-[13px] leading-4">
@@ -59,7 +59,7 @@ import { ChevronDownIcon, ChevronRightIcon, ClockIcon } from '@heroicons/vue/20/
 
         <div class="flex grow flex-1 content-center md:items-center text-left gap-1 md:gap-5 flex-col md:flex-row">
           <a href="#" class="flex h-6 w-6">
-            <img class="h-6 w-6" src="../../assets/none/teamNoLogo.svg" alt="teamName" />
+            <img class="h-6 max-w-full" src="../../assets/none/teamNoLogo.svg" alt="teamName" />
           </a>
           <a href="#" class="flex text-white text-[13px] leading-4">
             Dota Geniuses
@@ -87,13 +87,13 @@ import { ChevronDownIcon, ChevronRightIcon, ClockIcon } from '@heroicons/vue/20/
       </div>
 
       <div class="flex items-center w-[75px] md:w-[102px] justify-end gap-3 pr-3">
+        <div class="flex w-7">
+          <img class="" src="../../assets/none/tourNoLogo.svg" alt="tourName" />
+        </div>
         <div class="flex flex-col justify-center items-center">
           <div class="flex font-bold flex-col text-xs dark:text-gray-300 leading-4">BO3</div>
           <span class="text-[11px] leading-none font-semibold mt-0.5 w-7
              px-1 py-0.5 rounded bg-apple text-white text-center">0:1</span>
-        </div>
-        <div class="flex">
-          <img class="h-7" src="../../assets/none/tourNoLogo.svg" alt="tourName" />
         </div>
       </div>
     </div>

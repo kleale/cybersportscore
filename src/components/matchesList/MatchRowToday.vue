@@ -47,13 +47,13 @@ import { ChevronDownIcon, ChevronRightIcon, ClockIcon } from '@heroicons/vue/20/
 
       </div>
       <div class="flex items-center w-[75px] md:w-[102px] justify-end gap-3 pr-3">
+        <div class="flex w-7">
+          <img class="w-7" src="../../assets/none/tourNoLogo.svg" alt="tourName" />
+        </div>
         <div class="flex flex-col justify-center items-center">
           <div class="flex font-bold flex-col text-xs dark:text-gray-300 leading-4">BO3</div>
           <span class="text-[11px] leading-none font-semibold mt-0.5 w-7
              px-1 py-0.5 rounded bg-apple text-white text-center">0:1</span>
-        </div>
-        <div class="flex">
-          <img class="h-7" src="../../assets/none/tourNoLogo.svg" alt="tourName" />
         </div>
       </div>
     </div>
