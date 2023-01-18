@@ -16,7 +16,7 @@ import NavBar from './components/layout/NavBar.vue'
 
     <noindex>
       <a rel="nofollow" class="bgad" target="_blank" href="/ru/go?n=201"
-        style="background:url(https://ggscore.com/media/a/banner201.gif) no-repeat scroll 50% 0px;">
+        style="background:#000 url(https://ggscore.com/media/a/banner201.gif) no-repeat scroll 50% 0px;">
       </a>
     </noindex>
   </div>
@@ -39,8 +39,8 @@ import NavBar from './components/layout/NavBar.vue'
 
 .bgad {
   display: block;
-  height: 1220px;
-  width: 2100px;
+  height: 100%;
+  width: 100%;
   position: fixed;
   top: 0px;
   left: 50%;
