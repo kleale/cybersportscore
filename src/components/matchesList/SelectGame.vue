@@ -7,8 +7,8 @@
                     focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500 sm:text-sm
                     dark:text-gray-200 dark:bg-gray-800 dark:border-gray-700"
                     >
-                <span v-if="selected" class="flex items-center">
-                    <img :src="selected.avatar" alt="" class="h-4 w-4 flex-shrink-0 rounded-full" />
+                <span v-if="selected" class="flex items-center h-4">
+                    <img :src="selected.avatar" alt="" class="w-4 flex-shrink-0" />
                     <span class="ml-3 block truncate text-xs">{{ selected.name }}</span>
                 </span>
                 <span v-else class="flex items-center">
@@ -30,7 +30,7 @@
                         <li
                             :class="[active ? 'text-white bg-indigo-600' : 'text-gray-900 dark:text-gray-400', 'relative cursor-default select-none py-2 pl-3 pr-9']">
                             <div class="flex items-center">
-                                <img :src="person.avatar" alt="" class="w-6 flex-shrink-0" />
+                                <img :src="person.avatar" alt="" class="w-4 flex-shrink-0" />
                                 <span :class="[selected ? 'font-semibold' : 'font-normal', 'ml-3 block truncate']">{{
                                         person.name
                                 }}</span>
@@ -38,7 +38,7 @@
 
                             <span v-if="selected"
                                 :class="[active ? 'text-white' : 'text-indigo-600', 'absolute inset-y-0 right-0 flex items-center pr-4']">
-                                <CheckIcon class="h-5 w-5" aria-hidden="true" />
+                                <CheckIcon class="h-4 w-4" aria-hidden="true" />
                             </span>
                         </li>
                     </ListboxOption>
@@ -54,12 +54,12 @@ import { Listbox, ListboxButton, ListboxLabel, ListboxOption, ListboxOptions } f
 import { CheckIcon, ChevronUpDownIcon } from '@heroicons/vue/20/solid'
 
 const games = [
-    // {
-    //     id: 1,
-    //     name: 'Falcons',
-    //     avatar:
-    //         'https://cybersportscore.com/media/logo/_30/t92520.png',
-    // },
+    {
+        id: 1,
+        name: 'Falcons',
+        avatar:
+            'https://api.cybersportscore.com/media/logo/_30/t87958.png?28',
+    },
 ]
 
 const selected = ref(games[1])
