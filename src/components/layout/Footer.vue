@@ -7,7 +7,7 @@ export default {
 <template>
 
     <footer class="p-4 md:flex md:items-center md:justify-between md:p-6 border-t border-gray-300 dark:border-gray-700">
-        <div class="text-xs text-gray-500 dark:text-gray-600 leading-4 pb-2">
+        <div class="text-xs text-gray-500 dark:text-gray-600 leading-4 pb-2 pr-20">
             <a href="/" class="hover:underline">
                 <img class="h-8 w-60" src="../../assets/logo_footer.svg"
                     alt="CyberSportScore.com" />
