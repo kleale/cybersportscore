@@ -23,39 +23,41 @@ const msgs = ref([
 </script>
 
 <template>
-  <div class="grid grid-cols-1 md:grid-cols-6 gap-4 px-3 py-2 max-w-6xl" style="margin: 0 auto">
-    <div class="col-span-1 md:col-span-3">
-      <StreamBlock />
+  <div class="max-w-6xl bg-gray-800" style="margin: 0 auto">
+    <div class="grid grid-cols-1 md:grid-cols-6 gap-4 px-3 py-2 max-w-6xl" style="margin: 0 auto">
+      <div class="col-span-1 md:col-span-3">
+        <StreamBlock />
+      </div>
+      <div class="col-span-1 md:col-span-3">
+        <MatchData />
+      </div>
     </div>
-    <div class="col-span-1 md:col-span-3">
-      <MatchData />
-    </div>
-  </div>
-  <div class="grid grid-cols-1 md:grid-cols-6 gap-4 px-3 py-2 max-w-6xl" style="margin: 0 auto">
-    <div class="col-span-1 md:col-span-3">
-      <div class="grid md:grid-cols-3 border border-gray-300 dark:border-gray-700 rounded p-2 gap-2">
-        <div class="flex col-span-3 md:col-span-1 items-center justify-center">
-          <MatchMap />
-        </div>
-        <div class="flex col-span-3 md:col-span-2 border border-gray-300 dark:border-gray-700 rounded p-2">
-          <div class="flex grow flex-col h-[188px] overflow-auto gap-1">
-            <div v-for="msg in msgs" class="flex text-xs gap-1">
-              <span class="text-apple font-bold w-20 text-ellipsis overflow-hidden">{{ msg.name }}</span>
-              <span class="text-gray-200" v-html="msg.content"></span>
+    <div class="grid grid-cols-1 md:grid-cols-6 gap-4 px-3 py-2 max-w-6xl" style="margin: 0 auto">
+      <div class="col-span-1 md:col-span-3">
+        <div class="grid md:grid-cols-3 border border-gray-300 dark:border-gray-700 rounded p-2 gap-2">
+          <div class="flex col-span-3 md:col-span-1 items-center justify-center">
+            <MatchMap />
+          </div>
+          <div class="flex col-span-3 md:col-span-2 border border-gray-300 dark:border-gray-700 rounded p-2">
+            <div class="flex grow flex-col h-[188px] overflow-auto gap-1">
+              <div v-for="msg in msgs" class="flex text-xs gap-1">
+                <span class="text-apple font-bold w-20 text-ellipsis overflow-hidden">{{ msg.name }}</span>
+                <span class="text-gray-200" v-html="msg.content"></span>
+              </div>
             </div>
           </div>
         </div>
       </div>
+      <div class="col-span-1 md:col-span-3">
+        <PlayersBlock />
+      </div>
     </div>
-    <div class="col-span-1 md:col-span-3">
-      <PlayersBlock />
+    <div class="px-3 py-2 max-w-6xl" style="margin: 0 auto">
+      <MatchDataTable />
     </div>
-  </div>
-  <div class="px-3 py-2 max-w-6xl" style="margin: 0 auto">
-    <MatchDataTable />
-  </div>
-  <div class="px-3 py-2 max-w-6xl" style="margin: 0 auto">
-    <MatchesByTeam />
+    <div class="px-3 py-2 max-w-6xl" style="margin: 0 auto">
+      <MatchesByTeam />
+    </div>
   </div>
 </template>
 

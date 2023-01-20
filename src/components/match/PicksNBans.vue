@@ -2,7 +2,7 @@
     <div class="flex py-2 flex-col">
         <div class="flex flex-1 grow items-center gap-1">
             <div v-for="pick in picks"
-                class="border border-gray-700 rounded-md w-[45px] shadow-md overflow-hidden relative">
+                class="border border-gray-700 rounded-md shadow-md overflow-hidden relative">
                 <img class="w-full" :src="pick.src" :alt="pick.name" />
                 <span class="absolute bg-gray-700 block bottom-0 right-0 text-[9px] leading-none p-1 rounded-tl-lg">{{
                         pick.try
@@ -11,7 +11,7 @@
             <div class="flex items-center gap-1 text-[10px] text-[#3A4C69] font-bold uppercase w-7 justify-center">pick
             </div>
             <div v-for="pick in picks"
-                class="border border-gray-700 rounded-md w-[45px] shadow-md overflow-hidden relative">
+                class="border border-gray-700 rounded-md shadow-md overflow-hidden relative">
                 <img class="w-full" :src="pick.src" :alt="pick.name" />
                 <span class="absolute bg-gray-700 block bottom-0 right-0 text-[9px] leading-none p-1 rounded-tl-lg">{{
                         pick.try
@@ -20,7 +20,7 @@
         </div>
 
         <div class="flex flex-1 grow items-center gap-1 pt-1">
-            <div v-for="ban in bans" class="border border-red-700 rounded-sm  shadow-md overflow-hidden relative">
+            <div v-for="ban in bans" class="border border-red-700 rounded-sm shadow-md overflow-hidden relative">
                 <img class="w-full" :src="ban.src" :alt="ban.name" />
                 <span class="absolute bg-gray-700 block bottom-0 right-0 text-[9px] leading-none p-0.5 rounded-tl-lg">{{
                         ban.try
@@ -28,7 +28,7 @@
             </div>
             <div class="flex items-center gap-1 text-[10px] text-[#3A4C69] font-bold uppercase w-7 justify-center">ban
             </div>
-            <div v-for="ban in bans" class="border border-red-700 rounded-sm  shadow-md overflow-hidden relative">
+            <div v-for="ban in bans" class="border border-red-700 rounded-sm shadow-md overflow-hidden relative">
                 <img class="w-full" :src="ban.src" :alt="ban.name" />
                 <span class="absolute bg-gray-700 block bottom-0 right-0 text-[9px] leading-none p-0.5 rounded-tl-lg">{{
                         ban.try
