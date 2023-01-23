@@ -1,5 +1,5 @@
 <template>
-    <div class="grid grid-cols-1 md:grid-cols-5 gap-5 p-3 max-w-6xl bg-gray-800" style="margin: 0 auto">
+    <div class="grid grid-cols-1 md:grid-cols-5 gap-5 p-3 bg-gray-800">
         <!-- <div class="col-span-4 md:col-span-4"> -->
         <div class="col-span-5 md:col-span-5">
             <MatchesList />
