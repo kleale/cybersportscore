@@ -8,7 +8,8 @@ import BnrCatFish from './components/layout/bnrCatFish.vue';
 <template>
   <Branding />
   <BnrCatFish />
-  <div class="relative z-10 max-w-6xl" style="margin: 0 auto">
+  
+  <div class="max-w-6xl relative" style="margin: 0 auto">
     <NavBar />
     <RouterView />
     <div class="p-3 max-w-6xl bg-gray-800" style="margin: 0 auto">
