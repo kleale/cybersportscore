@@ -8,219 +8,612 @@
 
 
 <script>
-import { ref, computed } from "vue";
-import VueHighcharts from "vue3-highcharts";
+// import { ref, computed } from "vue";
+// import VueHighcharts from "vue3-highcharts";
+import tippy from 'tippy.js';
+import 'tippy.js/dist/tippy.css'; // optional for styling
 
 export default {
-    mounted() {   
+    components: {
+        tippy,
+    },
+    mounted() {
 
-        const data = {"id":979320,"db_id":6980324435,"winner":4061,"match_data":{"teams":{"t1":{"id":36,"score":12,"win":0,"players":{"93817671":{"team":16,"side":"radiant","id":39380,"nick":"Malady","hero_id":86,"hero_title":"Rubick","k":2,"d":7,"a":9,"l":49,"dn":2,"lvl":14,"gpm":250,"xpm":288,"n":7402,"items":[{"id":188,"title":"Smoke of Deceit"},{"id":102,"title":"Force Staff"},{"id":218,"title":"Observer and Sentry Wards"},{"id":180,"title":"Arcane Boots"},{"id":36,"title":"Magic Wand"},{"id":1076,"title":"Specialist's Array"}],"dmg":17696,"tdmg":0,"heal":864},"152455523":{"team":16,"side":"radiant","id":18028,"nick":"V-Tune","hero_id":4,"hero_title":"Bloodseeker","k":7,"d":4,"a":4,"l":390,"dn":28,"lvl":23,"gpm":661,"xpm":755,"n":25387,"items":[{"id":156,"title":"Satanic"},{"id":50,"title":"Phase Boots"},{"id":116,"title":"Black King Bar"},{"id":147,"title":"Manta Style"},{"id":143,"title":"Skull Basher"},{"id":158,"title":"Mjollnir"},{"id":309,"title":"Mind Breaker"}],"dmg":41036,"tdmg":0,"heal":0},"294135421":{"team":16,"side":"radiant","id":18193,"nick":"Nicky Cool","hero_id":50,"hero_title":"Dazzle","k":0,"d":6,"a":10,"l":242,"dn":5,"lvl":19,"gpm":466,"xpm":506,"n":17843,"items":[{"id":231,"title":"Guardian Greaves"},{"id":244,"title":"Wind Lace"},{"id":36,"title":"Magic Wand"},{"id":226,"title":"Lotus Orb"},{"id":108,"title":"Aghanim's Scepter"},{"id":41,"title":"Bottle"},{"id":676,"title":"Ceremonial Robe"}],"dmg":15978,"tdmg":0,"heal":14075},"175311897":{"team":16,"side":"radiant","id":64352,"nick":"swedenstrong","hero_id":32,"hero_title":"Riki","k":1,"d":3,"a":17,"l":19,"dn":6,"lvl":14,"gpm":198,"xpm":284,"n":6545,"items":[{"id":36,"title":"Magic Wand"},{"id":180,"title":"Arcane Boots"},{"id":102,"title":"Force Staff"},{"id":43,"title":"Sentry Ward"},{"id":57,"title":"Void Stone"},{"id":188,"title":"Smoke of Deceit"},{"id":331,"title":"Vambrace"}],"dmg":7233,"tdmg":0,"heal":186},"117514269":{"team":16,"side":"radiant","id":45930,"nick":"laise","hero_id":92,"hero_title":"Visage","k":2,"d":6,"a":7,"l":171,"dn":12,"lvl":17,"gpm":371,"xpm":408,"n":14288,"items":[{"id":112,"title":"Assault Cuirass"},{"id":908,"title":"Wraith Pact"},{"id":240,"title":"Blight Stone"},{"id":185,"title":"Drum of Endurance"},{"id":36,"title":"Magic Wand"},{"id":214,"title":"Tranquil Boots"},{"id":358,"title":"Dragon Scale"}],"dmg":14224,"tdmg":827,"heal":3007}},"bans":[{"id":53,"title":"Nature's Prophet"},{"id":61,"title":"Broodmother"},{"id":65,"title":"Batrider"},{"id":77,"title":"Lycan"},{"id":105,"title":"Techies"},{"id":97,"title":"Magnus"},{"id":69,"title":"Doom"}],"picks":[{"id":32,"title":"Riki"},{"id":92,"title":"Visage"},{"id":86,"title":"Rubick"},{"id":4,"title":"Bloodseeker"},{"id":50,"title":"Dazzle"}],"tid":16,"title":"Natus Vincere"},"t2":{"id":7422789,"score":26,"win":1,"players":{"134556694":{"team":4061,"side":"dire","id":322,"nick":"Solo","hero_id":83,"hero_title":"Treant Protector","k":0,"d":5,"a":18,"l":53,"dn":6,"lvl":17,"gpm":291,"xpm":405,"n":7173,"items":[{"id":180,"title":"Arcane Boots"},{"id":36,"title":"Magic Wand"},{"id":218,"title":"Observer and Sentry Wards"},{"id":9,"title":"Platemail"},{"id":102,"title":"Force Staff"},{"id":676,"title":"Ceremonial Robe"}],"dmg":11533,"tdmg":805,"heal":9337},"858106446":{"team":4061,"side":"dire","id":50863,"nick":"Kiyotaka","hero_id":106,"hero_title":"Ember Spirit","k":16,"d":1,"a":7,"l":343,"dn":2,"lvl":24,"gpm":689,"xpm":824,"n":28863,"items":[{"id":235,"title":"Octarine Core"},{"id":1466,"title":"Gleipnir"},{"id":116,"title":"Black King Bar"},{"id":119,"title":"Shiva's Guard"},{"id":48,"title":"Boots of Travel"},{"id":311,"title":"Spell Prism"}],"dmg":45011,"tdmg":2597,"heal":0},"161839895":{"team":4061,"side":"dire","id":73788,"nick":"Antares","hero_id":58,"hero_title":"Enchantress","k":1,"d":0,"a":18,"l":206,"dn":2,"lvl":20,"gpm":450,"xpm":555,"n":18415,"items":[{"id":931,"title":"Boots of Bearing"},{"id":263,"title":"Hurricane Pike"},{"id":908,"title":"Wraith Pact"},{"id":75,"title":"Wraith Band"},{"id":33,"title":"Cheese"},{"id":63,"title":"Power Treads"},{"id":949,"title":"Ogre Seal Totem"}],"dmg":14790,"tdmg":6211,"heal":4216},"165564598":{"team":4061,"side":"dire","id":78495,"nick":"MieRo","hero_id":100,"hero_title":"Tusk","k":2,"d":4,"a":16,"l":123,"dn":10,"lvl":19,"gpm":342,"xpm":500,"n":12616,"items":[{"id":242,"title":"Crimson Guard"},{"id":231,"title":"Guardian Greaves"},{"id":11,"title":"Quelling Blade"},{"id":40,"title":"Dust of Appearance"},{"id":36,"title":"Magic Wand"},{"id":574,"title":"Cloak of Flames"}],"dmg":15572,"tdmg":683,"heal":8685},"177411785":{"team":4061,"side":"dire","id":17554,"nick":"Daxak","hero_id":89,"hero_title":"Naga Siren","k":7,"d":2,"a":12,"l":526,"dn":24,"lvl":23,"gpm":836,"xpm":731,"n":29904,"items":[{"id":117,"title":"Aegis of the Immortal"},{"id":116,"title":"Black King Bar"},{"id":114,"title":"Heart of Tarrasque"},{"id":139,"title":"Butterfly"},{"id":147,"title":"Manta Style"},{"id":98,"title":"Orchid Malevolence"},{"id":571,"title":"Trickster Cloak"}],"dmg":23277,"tdmg":7447,"heal":0}},"bans":[{"id":75,"title":"Silencer"},{"id":38,"title":"Beastmaster"},{"id":98,"title":"Timbersaw"},{"id":137,"title":"Primal Beast"},{"id":6,"title":"Drow Ranger"},{"id":22,"title":"Zeus"},{"id":43,"title":"Death Prophet"}],"picks":[{"id":100,"title":"Tusk"},{"id":89,"title":"Naga Siren"},{"id":83,"title":"Treant Protector"},{"id":58,"title":"Enchantress"},{"id":106,"title":"Ember Spirit"}],"tid":4061,"title":"HellRaisers"}},"duration":2404,"gold":{"2404":-25506,"0":2,"60":-187,"120":-161,"180":-6,"240":-562,"300":-291,"360":-550,"420":-634,"480":-1678,"540":-2703,"600":-3708,"660":-5488,"720":-5537,"780":-6404,"840":-7269,"900":-8557,"960":-10524,"1020":-10306,"1080":-11516,"1140":-11431,"1200":-11384,"1260":-11268,"1320":-11531,"1380":-11870,"1440":-12549,"1500":-13533,"1560":-14828,"1620":-15393,"1680":-16559,"1740":-17009,"1800":-19359,"1860":-21988,"1920":-24316,"1980":-20071,"2040":-19506,"2100":-20020,"2160":-20354,"2220":-21925,"2280":-22554,"2340":-21763,"2400":-26578},"ts":{"radiant":{"tower_state":1542,"barracks_state":3},"dire":{"tower_state":2046,"barracks_state":63}},"events":{"0":[{"s":"t2","i":"3","h":[{"s":"t2","t1":106,"t2":50,"t":7}],"g1":382,"g2":722,"d1":930,"d2":979}],"360":[{"s":"t1","i":"3","h":[{"s":"t1","t1":86,"t2":106,"t":392}],"g1":619,"g2":548,"d1":2348,"d2":1588}],"480":[{"s":"t2","i":"3","h":[{"s":"t2","t1":106,"t2":32,"t":468}],"g1":443,"g2":965,"d1":1586,"d2":2124}],"540":[{"s":"t2","i":"3","h":[{"s":"t2","t1":58,"t2":50,"t":528},{"s":"t2","t1":89,"t2":92,"t":532}],"g1":164,"g2":928,"d1":1709,"d2":2656},{"b":["Tier 1 Middle Tower"],"i":"2","s":"t2"}],"600":[{"s":"t2","i":"3","h":[{"s":"t2","t1":106,"t2":86,"t":641}],"g1":609,"g2":1551,"d1":199,"d2":880},{"b":["Tier 1 Bottom Tower"],"i":"2","s":"t2"}],"660":[{"s":"t1","i":"3","h":[{"s":"t1","t1":86,"t2":100,"t":698}],"g1":712,"g2":375,"d1":2595,"d2":3301}],"720":[{"s":"t2","i":"3","h":[{"s":"t2","t1":106,"t2":86,"t":761},{"s":"t2","t1":89,"t2":32,"t":776}],"g1":418,"g2":1457,"d1":318,"d2":1749}],"780":[{"s":"t2","i":"3","h":[{"s":"t2","t1":106,"t2":86,"t":761},{"s":"t2","t1":89,"t2":32,"t":776}],"g1":228,"g2":1583,"d1":188,"d2":1064}],"840":[{"s":"t2","i":"3","h":[{"s":"t2","t1":106,"t2":92,"t":848}],"g1":521,"g2":1177,"d1":1650,"d2":833},{"b":["Tier 2 Bottom Tower"],"i":"2","s":"t2"}],"900":[{"s":"t2","i":"3","h":[{"s":"t2","t1":106,"t2":4,"t":944}],"g1":476,"g2":1826,"d1":275,"d2":1922},{"b":["Tier 1 Top Tower"],"i":"2","s":"t2"}],"1020":[{"a":{"c":"t2","h":"Ember Spirit","s":106},"i":1,"r":{"s":"t2","t1":0,"t2":0}}],"1080":[{"b":["Tier 2 Middle Tower"],"i":"2","s":"t2"}],"1140":[{"s":"t2","i":"3","h":[{"s":"t2","t1":89,"t2":92,"t":1180}],"g1":716,"g2":1345,"d1":1170,"d2":1417}],"1260":[{"s":"t1","i":"3","h":[{"s":"t1","t1":92,"t2":83,"t":1258},{"s":"t1","t1":4,"t2":100,"t":1259}],"g1":1082,"g2":-7,"d1":6954,"d2":4214}],"1740":[{"s":"t2","i":"3","h":[{"s":"t1","t1":4,"t2":83,"t":1711},{"s":"t1","t1":4,"t2":100,"t":1712},{"s":"t2","t1":106,"t2":50,"t":1712},{"s":"t2","t1":89,"t2":92,"t":1714},{"s":"t2","t1":106,"t2":86,"t":1726}],"g1":1316,"g2":2164,"d1":9500,"d2":10058},{"a":{"c":"t2","h":"Ember Spirit","s":106},"i":1,"r":{"s":"t2","t1":0,"t2":0}}],"1800":[{"s":"t2","i":"3","h":[{"s":"t2","t1":89,"t2":4,"t":1792}],"g1":-74,"g2":1458,"d1":4306,"d2":3571},{"b":["Tier 3 Bottom Tower","Tier 3 Middle Tower","npc_dota_goodguys_melee_rax_mid"],"i":"2","s":"t2"}],"1860":[{"b":["npc_dota_goodguys_range_rax_bot"],"i":"2","s":"t2"}],"1920":[{"s":"t1","i":"3","h":[{"s":"t1","t1":4,"t2":89,"t":1942},{"s":"t1","t1":32,"t2":83,"t":1946}],"g1":3028,"g2":-321,"d1":8513,"d2":4929}],"1980":[{"b":["Tier 1 Top Tower"],"i":"2","s":"t1"}],"2040":[{"s":"t2","i":"3","h":[{"s":"t2","t1":89,"t2":86,"t":2059},{"s":"t2","t1":100,"t2":50,"t":2061},{"s":"t1","t1":4,"t2":89,"t":2069},{"s":"t1","t1":4,"t2":83,"t":2075},{"s":"t2","t1":106,"t2":4,"t":2077}],"g1":1365,"g2":1887,"d1":13275,"d2":9640}],"2220":[{"s":"t1","i":"3","h":[{"s":"t1","t1":4,"t2":83,"t":2246},{"s":"t2","t1":89,"t2":86,"t":2254},{"s":"t1","t1":92,"t2":100,"t":2261}],"g1":2016,"g2":1743,"d1":15072,"d2":9262}],"2340":[{"a":{"c":"t2","h":"Naga Siren","s":89},"i":1,"r":{"s":"t2","t1":0,"t2":0}}]},"is_parser":"5"}}
+        const data = { "id": 979320, "db_id": 6980324435, "winner": 4061, "match_data": { "teams": { "t1": { "id": 36, "score": 12, "win": 0, "players": { "93817671": { "team": 16, "side": "radiant", "id": 39380, "nick": "Malady", "hero_id": 86, "hero_title": "Rubick", "k": 2, "d": 7, "a": 9, "l": 49, "dn": 2, "lvl": 14, "gpm": 250, "xpm": 288, "n": 7402, "items": [{ "id": 188, "title": "Smoke of Deceit" }, { "id": 102, "title": "Force Staff" }, { "id": 218, "title": "Observer and Sentry Wards" }, { "id": 180, "title": "Arcane Boots" }, { "id": 36, "title": "Magic Wand" }, { "id": 1076, "title": "Specialist's Array" }], "dmg": 17696, "tdmg": 0, "heal": 864 }, "152455523": { "team": 16, "side": "radiant", "id": 18028, "nick": "V-Tune", "hero_id": 4, "hero_title": "Bloodseeker", "k": 7, "d": 4, "a": 4, "l": 390, "dn": 28, "lvl": 23, "gpm": 661, "xpm": 755, "n": 25387, "items": [{ "id": 156, "title": "Satanic" }, { "id": 50, "title": "Phase Boots" }, { "id": 116, "title": "Black King Bar" }, { "id": 147, "title": "Manta Style" }, { "id": 143, "title": "Skull Basher" }, { "id": 158, "title": "Mjollnir" }, { "id": 309, "title": "Mind Breaker" }], "dmg": 41036, "tdmg": 0, "heal": 0 }, "294135421": { "team": 16, "side": "radiant", "id": 18193, "nick": "Nicky Cool", "hero_id": 50, "hero_title": "Dazzle", "k": 0, "d": 6, "a": 10, "l": 242, "dn": 5, "lvl": 19, "gpm": 466, "xpm": 506, "n": 17843, "items": [{ "id": 231, "title": "Guardian Greaves" }, { "id": 244, "title": "Wind Lace" }, { "id": 36, "title": "Magic Wand" }, { "id": 226, "title": "Lotus Orb" }, { "id": 108, "title": "Aghanim's Scepter" }, { "id": 41, "title": "Bottle" }, { "id": 676, "title": "Ceremonial Robe" }], "dmg": 15978, "tdmg": 0, "heal": 14075 }, "175311897": { "team": 16, "side": "radiant", "id": 64352, "nick": "swedenstrong", "hero_id": 32, "hero_title": "Riki", "k": 1, "d": 3, "a": 17, "l": 19, "dn": 6, "lvl": 14, "gpm": 198, "xpm": 284, "n": 6545, "items": [{ "id": 36, "title": "Magic Wand" }, { "id": 180, "title": "Arcane Boots" }, { "id": 102, "title": "Force Staff" }, { "id": 43, "title": "Sentry Ward" }, { "id": 57, "title": "Void Stone" }, { "id": 188, "title": "Smoke of Deceit" }, { "id": 331, "title": "Vambrace" }], "dmg": 7233, "tdmg": 0, "heal": 186 }, "117514269": { "team": 16, "side": "radiant", "id": 45930, "nick": "laise", "hero_id": 92, "hero_title": "Visage", "k": 2, "d": 6, "a": 7, "l": 171, "dn": 12, "lvl": 17, "gpm": 371, "xpm": 408, "n": 14288, "items": [{ "id": 112, "title": "Assault Cuirass" }, { "id": 908, "title": "Wraith Pact" }, { "id": 240, "title": "Blight Stone" }, { "id": 185, "title": "Drum of Endurance" }, { "id": 36, "title": "Magic Wand" }, { "id": 214, "title": "Tranquil Boots" }, { "id": 358, "title": "Dragon Scale" }], "dmg": 14224, "tdmg": 827, "heal": 3007 } }, "bans": [{ "id": 53, "title": "Nature's Prophet" }, { "id": 61, "title": "Broodmother" }, { "id": 65, "title": "Batrider" }, { "id": 77, "title": "Lycan" }, { "id": 105, "title": "Techies" }, { "id": 97, "title": "Magnus" }, { "id": 69, "title": "Doom" }], "picks": [{ "id": 32, "title": "Riki" }, { "id": 92, "title": "Visage" }, { "id": 86, "title": "Rubick" }, { "id": 4, "title": "Bloodseeker" }, { "id": 50, "title": "Dazzle" }], "tid": 16, "title": "Natus Vincere" }, "t2": { "id": 7422789, "score": 26, "win": 1, "players": { "134556694": { "team": 4061, "side": "dire", "id": 322, "nick": "Solo", "hero_id": 83, "hero_title": "Treant Protector", "k": 0, "d": 5, "a": 18, "l": 53, "dn": 6, "lvl": 17, "gpm": 291, "xpm": 405, "n": 7173, "items": [{ "id": 180, "title": "Arcane Boots" }, { "id": 36, "title": "Magic Wand" }, { "id": 218, "title": "Observer and Sentry Wards" }, { "id": 9, "title": "Platemail" }, { "id": 102, "title": "Force Staff" }, { "id": 676, "title": "Ceremonial Robe" }], "dmg": 11533, "tdmg": 805, "heal": 9337 }, "858106446": { "team": 4061, "side": "dire", "id": 50863, "nick": "Kiyotaka", "hero_id": 106, "hero_title": "Ember Spirit", "k": 16, "d": 1, "a": 7, "l": 343, "dn": 2, "lvl": 24, "gpm": 689, "xpm": 824, "n": 28863, "items": [{ "id": 235, "title": "Octarine Core" }, { "id": 1466, "title": "Gleipnir" }, { "id": 116, "title": "Black King Bar" }, { "id": 119, "title": "Shiva's Guard" }, { "id": 48, "title": "Boots of Travel" }, { "id": 311, "title": "Spell Prism" }], "dmg": 45011, "tdmg": 2597, "heal": 0 }, "161839895": { "team": 4061, "side": "dire", "id": 73788, "nick": "Antares", "hero_id": 58, "hero_title": "Enchantress", "k": 1, "d": 0, "a": 18, "l": 206, "dn": 2, "lvl": 20, "gpm": 450, "xpm": 555, "n": 18415, "items": [{ "id": 931, "title": "Boots of Bearing" }, { "id": 263, "title": "Hurricane Pike" }, { "id": 908, "title": "Wraith Pact" }, { "id": 75, "title": "Wraith Band" }, { "id": 33, "title": "Cheese" }, { "id": 63, "title": "Power Treads" }, { "id": 949, "title": "Ogre Seal Totem" }], "dmg": 14790, "tdmg": 6211, "heal": 4216 }, "165564598": { "team": 4061, "side": "dire", "id": 78495, "nick": "MieRo", "hero_id": 100, "hero_title": "Tusk", "k": 2, "d": 4, "a": 16, "l": 123, "dn": 10, "lvl": 19, "gpm": 342, "xpm": 500, "n": 12616, "items": [{ "id": 242, "title": "Crimson Guard" }, { "id": 231, "title": "Guardian Greaves" }, { "id": 11, "title": "Quelling Blade" }, { "id": 40, "title": "Dust of Appearance" }, { "id": 36, "title": "Magic Wand" }, { "id": 574, "title": "Cloak of Flames" }], "dmg": 15572, "tdmg": 683, "heal": 8685 }, "177411785": { "team": 4061, "side": "dire", "id": 17554, "nick": "Daxak", "hero_id": 89, "hero_title": "Naga Siren", "k": 7, "d": 2, "a": 12, "l": 526, "dn": 24, "lvl": 23, "gpm": 836, "xpm": 731, "n": 29904, "items": [{ "id": 117, "title": "Aegis of the Immortal" }, { "id": 116, "title": "Black King Bar" }, { "id": 114, "title": "Heart of Tarrasque" }, { "id": 139, "title": "Butterfly" }, { "id": 147, "title": "Manta Style" }, { "id": 98, "title": "Orchid Malevolence" }, { "id": 571, "title": "Trickster Cloak" }], "dmg": 23277, "tdmg": 7447, "heal": 0 } }, "bans": [{ "id": 75, "title": "Silencer" }, { "id": 38, "title": "Beastmaster" }, { "id": 98, "title": "Timbersaw" }, { "id": 137, "title": "Primal Beast" }, { "id": 6, "title": "Drow Ranger" }, { "id": 22, "title": "Zeus" }, { "id": 43, "title": "Death Prophet" }], "picks": [{ "id": 100, "title": "Tusk" }, { "id": 89, "title": "Naga Siren" }, { "id": 83, "title": "Treant Protector" }, { "id": 58, "title": "Enchantress" }, { "id": 106, "title": "Ember Spirit" }], "tid": 4061, "title": "HellRaisers" } }, "duration": 2404, "gold": { "2404": -25506, "0": 2, "60": -187, "120": -161, "180": -6, "240": -562, "300": -291, "360": -550, "420": -634, "480": -1678, "540": -2703, "600": -3708, "660": -5488, "720": -5537, "780": -6404, "840": -7269, "900": -8557, "960": -10524, "1020": -10306, "1080": -11516, "1140": -11431, "1200": -11384, "1260": -11268, "1320": -11531, "1380": -11870, "1440": -12549, "1500": -13533, "1560": -14828, "1620": -15393, "1680": -16559, "1740": -17009, "1800": -19359, "1860": -21988, "1920": -24316, "1980": -20071, "2040": -19506, "2100": -20020, "2160": -20354, "2220": -21925, "2280": -22554, "2340": -21763, "2400": -26578 }, "ts": { "radiant": { "tower_state": 1542, "barracks_state": 3 }, "dire": { "tower_state": 2046, "barracks_state": 63 } }, "events": { "0": [{ "s": "t2", "i": "3", "h": [{ "s": "t2", "t1": 106, "t2": 50, "t": 7 }], "g1": 382, "g2": 722, "d1": 930, "d2": 979 }], "360": [{ "s": "t1", "i": "3", "h": [{ "s": "t1", "t1": 86, "t2": 106, "t": 392 }], "g1": 619, "g2": 548, "d1": 2348, "d2": 1588 }], "480": [{ "s": "t2", "i": "3", "h": [{ "s": "t2", "t1": 106, "t2": 32, "t": 468 }], "g1": 443, "g2": 965, "d1": 1586, "d2": 2124 }], "540": [{ "s": "t2", "i": "3", "h": [{ "s": "t2", "t1": 58, "t2": 50, "t": 528 }, { "s": "t2", "t1": 89, "t2": 92, "t": 532 }], "g1": 164, "g2": 928, "d1": 1709, "d2": 2656 }, { "b": ["Tier 1 Middle Tower"], "i": "2", "s": "t2" }], "600": [{ "s": "t2", "i": "3", "h": [{ "s": "t2", "t1": 106, "t2": 86, "t": 641 }], "g1": 609, "g2": 1551, "d1": 199, "d2": 880 }, { "b": ["Tier 1 Bottom Tower"], "i": "2", "s": "t2" }], "660": [{ "s": "t1", "i": "3", "h": [{ "s": "t1", "t1": 86, "t2": 100, "t": 698 }], "g1": 712, "g2": 375, "d1": 2595, "d2": 3301 }], "720": [{ "s": "t2", "i": "3", "h": [{ "s": "t2", "t1": 106, "t2": 86, "t": 761 }, { "s": "t2", "t1": 89, "t2": 32, "t": 776 }], "g1": 418, "g2": 1457, "d1": 318, "d2": 1749 }], "780": [{ "s": "t2", "i": "3", "h": [{ "s": "t2", "t1": 106, "t2": 86, "t": 761 }, { "s": "t2", "t1": 89, "t2": 32, "t": 776 }], "g1": 228, "g2": 1583, "d1": 188, "d2": 1064 }], "840": [{ "s": "t2", "i": "3", "h": [{ "s": "t2", "t1": 106, "t2": 92, "t": 848 }], "g1": 521, "g2": 1177, "d1": 1650, "d2": 833 }, { "b": ["Tier 2 Bottom Tower"], "i": "2", "s": "t2" }], "900": [{ "s": "t2", "i": "3", "h": [{ "s": "t2", "t1": 106, "t2": 4, "t": 944 }], "g1": 476, "g2": 1826, "d1": 275, "d2": 1922 }, { "b": ["Tier 1 Top Tower"], "i": "2", "s": "t2" }], "1020": [{ "a": { "c": "t2", "h": "Ember Spirit", "s": 106 }, "i": 1, "r": { "s": "t2", "t1": 0, "t2": 0 } }], "1080": [{ "b": ["Tier 2 Middle Tower"], "i": "2", "s": "t2" }], "1140": [{ "s": "t2", "i": "3", "h": [{ "s": "t2", "t1": 89, "t2": 92, "t": 1180 }], "g1": 716, "g2": 1345, "d1": 1170, "d2": 1417 }], "1260": [{ "s": "t1", "i": "3", "h": [{ "s": "t1", "t1": 92, "t2": 83, "t": 1258 }, { "s": "t1", "t1": 4, "t2": 100, "t": 1259 }], "g1": 1082, "g2": -7, "d1": 6954, "d2": 4214 }], "1740": [{ "s": "t2", "i": "3", "h": [{ "s": "t1", "t1": 4, "t2": 83, "t": 1711 }, { "s": "t1", "t1": 4, "t2": 100, "t": 1712 }, { "s": "t2", "t1": 106, "t2": 50, "t": 1712 }, { "s": "t2", "t1": 89, "t2": 92, "t": 1714 }, { "s": "t2", "t1": 106, "t2": 86, "t": 1726 }], "g1": 1316, "g2": 2164, "d1": 9500, "d2": 10058 }, { "a": { "c": "t2", "h": "Ember Spirit", "s": 106 }, "i": 1, "r": { "s": "t2", "t1": 0, "t2": 0 } }], "1800": [{ "s": "t2", "i": "3", "h": [{ "s": "t2", "t1": 89, "t2": 4, "t": 1792 }], "g1": -74, "g2": 1458, "d1": 4306, "d2": 3571 }, { "b": ["Tier 3 Bottom Tower", "Tier 3 Middle Tower", "npc_dota_goodguys_melee_rax_mid"], "i": "2", "s": "t2" }], "1860": [{ "b": ["npc_dota_goodguys_range_rax_bot"], "i": "2", "s": "t2" }], "1920": [{ "s": "t1", "i": "3", "h": [{ "s": "t1", "t1": 4, "t2": 89, "t": 1942 }, { "s": "t1", "t1": 32, "t2": 83, "t": 1946 }], "g1": 3028, "g2": -321, "d1": 8513, "d2": 4929 }], "1980": [{ "b": ["Tier 1 Top Tower"], "i": "2", "s": "t1" }], "2040": [{ "s": "t2", "i": "3", "h": [{ "s": "t2", "t1": 89, "t2": 86, "t": 2059 }, { "s": "t2", "t1": 100, "t2": 50, "t": 2061 }, { "s": "t1", "t1": 4, "t2": 89, "t": 2069 }, { "s": "t1", "t1": 4, "t2": 83, "t": 2075 }, { "s": "t2", "t1": 106, "t2": 4, "t": 2077 }], "g1": 1365, "g2": 1887, "d1": 13275, "d2": 9640 }], "2220": [{ "s": "t1", "i": "3", "h": [{ "s": "t1", "t1": 4, "t2": 83, "t": 2246 }, { "s": "t2", "t1": 89, "t2": 86, "t": 2254 }, { "s": "t1", "t1": 92, "t2": 100, "t": 2261 }], "g1": 2016, "g2": 1743, "d1": 15072, "d2": 9262 }], "2340": [{ "a": { "c": "t2", "h": "Naga Siren", "s": 89 }, "i": 1, "r": { "s": "t2", "t1": 0, "t2": 0 } }] }, "is_parser": "5" } }
+        //var trsl = {"bread_home":"\u0413\u043b\u0430\u0432\u043d\u0430\u044f","min_age":"\u0421\u0430\u0439\u0442 \u043f\u0440\u0435\u0434\u043d\u0430\u0437\u043d\u0430\u0447\u0435\u043d \u0434\u043b\u044f \u043b\u0438\u0446 \u043d\u0435 \u043c\u043b\u0430\u0434\u0448\u0435 18 \u043b\u0435\u0442","menu_bottom":"<li><a href=\"\/ru\/about\">\u041e \u043f\u0440\u043e\u0435\u043a\u0442\u0435<\/a><\/li><li><a href=\"\/ru\/ads\">\u0420\u0435\u043a\u043b\u0430\u043c\u0430<\/a><\/li>","news_latest":"\u041f\u043e\u0441\u043b\u0435\u0434\u043d\u0438\u0435 \u043d\u043e\u0432\u043e\u0441\u0442\u0438 %g%","news_latest_e":"\u041d\u043e\u0432\u043e\u0441\u0442\u0438 \u0442\u0443\u0440\u043d\u0438\u0440\u043e\u0432 %g%","news_latest_f":"\u041d\u043e\u0432\u043e\u0441\u0442\u0438 %t%","news_all":"\u0412\u0441\u0435 \u043d\u043e\u0432\u043e\u0441\u0442\u0438","news_0":"\u041a\u0438\u0431\u0435\u0440\u0441\u043f\u043e\u0440\u0442","news_main":"\u041d\u043e\u0432\u043e\u0441\u0442\u0438 \u0438\u0433\u0440 \u0438 \u043a\u0438\u0431\u0435\u0440\u0441\u043f\u043e\u0440\u0442\u0430","news_nol":"\u0414\u043b\u044f \u0432\u044b\u0431\u0440\u0430\u043d\u043d\u043e\u0433\u043e \u044f\u0437\u044b\u043a\u0430 \u043d\u0435\u0442 \u043d\u043e\u0432\u043e\u0441\u0442\u0435\u0439","matches":"\u041c\u0430\u0442\u0447\u0438","events":"\u0422\u0443\u0440\u043d\u0438\u0440\u044b","event":"\u0422\u0443\u0440\u043d\u0438\u0440","stage":"\u0421\u0442\u0430\u0434\u0438\u044f","round":"\u0420\u0430\u0443\u043d\u0434","tab":"\u0414\u0435\u043d\u044c","games":"\u0418\u0433\u0440\u044b","game":"\u0418\u0433\u0440\u0430","teams":"\u041a\u043e\u043c\u0430\u043d\u0434\u044b","team":"\u041a\u043e\u043c\u0430\u043d\u0434\u0430","players":"\u0418\u0433\u0440\u043e\u043a\u0438","player":"\u0418\u0433\u0440\u043e\u043a","news":"\u041d\u043e\u0432\u043e\u0441\u0442\u0438","article":"\u0421\u0442\u0430\u0442\u044c\u0438","highlights":"\u0425\u0430\u0439\u043b\u0430\u0439\u0442\u044b","video":"\u0412\u0438\u0434\u0435\u043e","save":"\u0421\u043e\u0445\u0440\u0430\u043d\u0438\u0442\u044c","login":"\u0412\u0445\u043e\u0434","reg":"\u0420\u0435\u0433","date_format":"%j% %ms% %y%, %h%:%i%","date_format_notime":"%j% %m% %y%","date_format_notime_ms":"%j% %ms% %y%","date_format_noday":"%ms% %y%","date_format_noyear":"%j% %ms%","date_format_full":"%j% %m% %y%, %h%:%i% %tz%","search_by_title":"\u041f\u043e\u0438\u0441\u043a \u043f\u043e \u043d\u0430\u0437\u0432\u0430\u043d\u0438\u044e","search_by_name":"\u041f\u043e\u0438\u0441\u043a \u043f\u043e \u0438\u043c\u0435\u043d\u0438","country":"\u0421\u0442\u0440\u0430\u043d\u0430","place":"\u043c\u0435\u0441\u0442\u043e","page":"\u0441\u0442\u0440.","exit":"\u0412\u044b\u0445\u043e\u0434","time":"\u0412\u0440\u0435\u043c\u044f","all":"\u0432\u0441\u0435","other":"\u0434\u0440\u0443\u0433\u0438\u0445","on":"\u043d\u0430","at":"\u043d\u0430","newsrid":{"1":"\u0412\u0430\u0436\u043d\u043e","2":"\u0412\u0438\u0434\u0435\u043e","3":"\u0421\u043b\u0443\u0445\u0438","4":"\u0418\u043d\u0442\u0435\u0440\u0432\u044c\u044e","5":"\u0424\u043e\u0442\u043e","6":"\u042d\u043a\u0441\u043a\u043b\u044e\u0437\u0438\u0432"},"newstags":{"1":"\u0418\u043d\u0442\u0435\u0440\u0432\u044c\u044e"},"matches_all":"\u0432\u0441\u0435 \u043c\u0430\u0442\u0447\u0438","matches_no":"\u0421\u0435\u0433\u043e\u0434\u043d\u044f \u043d\u0435\u0442 \u043c\u0430\u0442\u0447\u0435\u0439","com_title":"\u041a\u043e\u043c\u043c\u0435\u043d\u0442\u0430\u0440\u0438\u0438","com_fan":"\u0424\u0430\u043d\u0430\u0442 %t%","com_send":"\u041e\u0442\u0432\u0435\u0442\u0438\u0442\u044c","com_edit":"\u041f\u0440\u0430\u0432\u0438\u0442\u044c","com_no":"<strong>\u041d\u0435\u0442 \u043a\u043e\u043c\u043c\u0435\u043d\u0442\u0430\u0440\u0438\u0435\u0432<\/strong> \u0421\u0430\u0439\u0442 \u0432 beta-\u0440\u0435\u0436\u0438\u043c\u0435, \u043a\u043e\u043c\u043c\u0435\u043d\u0442\u0430\u0440\u0438\u0438 \u0432\u044b\u043a\u043b\u044e\u0447\u0435\u043d\u044b","com_win":"\u041f\u043e\u0431\u0435\u0434\u0438\u0442<br>%t%","com_holder":"\u041d\u0430\u043f\u0438\u0441\u0430\u0442\u044c \u043a\u043e\u043c\u043c\u0435\u043d\u0442\u0430\u0440\u0438\u0439, \u043e\u0442\u043f\u0440\u0430\u0432\u043b\u044f\u0442\u044c \u043c\u043e\u0436\u043d\u043e \u043f\u043e Ctrl+Enter","com_holder_r":"\u0412 \u043e\u0442\u0432\u0435\u0442 %u%","com_team_win":"\u043f\u043e\u0431\u0435\u0434\u0438\u0442","com_team":"\u0432\u044b\u0431\u0440\u0430\u0442\u044c \u043a\u043e\u043c\u0430\u043d\u0434\u0443","meta_match":{"meta_title":["%t1% - %t2%%d% - \u0441\u0442\u0440\u0438\u043c \u043c\u0430\u0442\u0447\u0430, \u043f\u0440\u044f\u043c\u0430\u044f \u0442\u0440\u0430\u043d\u0441\u043b\u044f\u0446\u0438\u044f - %t% - %g%","%t1% - %t2% (%t1s%:%t2s%)%d% - \u0440\u0435\u0437\u0443\u043b\u044c\u0442\u0430\u0442 \u043c\u0430\u0442\u0447\u0430, \u0432\u0438\u0434\u0435\u043e, \u0441\u0442\u0430\u0442\u0438\u0441\u0442\u0438\u043a\u0430 - %t% - %g%","%t%%d% - %e%"],"meta_description":["\u0421\u043c\u043e\u0442\u0440\u0435\u0442\u044c \u0441\u0442\u0440\u0438\u043c \u043c\u0430\u0442\u0447\u0430 %d%%t1% \u043f\u0440\u043e\u0442\u0438\u0432 %t2% \u043d\u0430 \u0442\u0443\u0440\u043d\u0438\u0440\u0435 %t% \u043f\u043e \u0438\u0433\u0440\u0435 %g%. %s%","\u0420\u0435\u0437\u0443\u043b\u044c\u0442\u0430\u0442 \u043c\u0430\u0442\u0447\u0430 %d%%t1% \u043f\u0440\u043e\u0442\u0438\u0432 %t2% \u043d\u0430 \u0442\u0443\u0440\u043d\u0438\u0440\u0435 %t% \u043f\u043e \u0438\u0433\u0440\u0435 %g%. %s%","%g%: \u0441\u043c\u043e\u0442\u0440\u0435\u0442\u044c \u0441\u0442\u0440\u0438\u043c \u043c\u0430\u0442\u0447\u0430 %t%%d%","%g%: \u0440\u0435\u0437\u0443\u043b\u044c\u0442\u0430\u0442 \u043c\u0430\u0442\u0447\u0430 %t%%d%"],"meta_keywords":["%tt%\u043f\u0440\u043e\u0442\u0438\u0432, vs, \u0442\u0443\u0440\u043d\u0438\u0440, %t%, \u0438\u0433\u0440\u0430, %g%, \u043a\u043e\u043c\u0430\u043d\u0434\u0430, online, \u0440\u0435\u0437\u0443\u043b\u044c\u0442\u0430\u0442, \u0441\u0447\u0435\u0442, \u0432\u0438\u0434\u0435\u043e, \u0432\u043e\u0434, \u0441\u0442\u0440\u0438\u043c","%t%%d%,\u0442\u0443\u0440\u043d\u0438\u0440, \u0438\u0433\u0440\u0430, %g%, \u043a\u043e\u043c\u0430\u043d\u0434\u0430, online, \u0440\u0435\u0437\u0443\u043b\u044c\u0442\u0430\u0442, \u0441\u0447\u0435\u0442, \u0432\u0438\u0434\u0435\u043e, \u0432\u043e\u0434, \u0441\u0442\u0440\u0438\u043c%tt%"]},"match":"\u041c\u0430\u0442\u0447","streams":"\u0421\u0442\u0440\u0438\u043c\u044b","streams_no":"\u041d\u0435\u0442 \u0441\u0442\u0440\u0438\u043c\u043e\u0432","vods_no":"\u0412\u0438\u0434\u0435\u043e (VOD\u2019s) \u0435\u0449\u0435 \u043d\u0435 \u0434\u043e\u0431\u0430\u0432\u043b\u0435\u043d\u044b","stat":"\u0421\u0442\u0430\u0442\u0438\u0441\u0442\u0438\u043a\u0430","match_watch":"\u0421\u043c\u043e\u0442\u0440\u0435\u0442\u044c \u0441\u0442\u0440\u0438\u043c \u043c\u0430\u0442\u0447\u0430","match_nowatch":"\u041d\u0435\u0442 \u0441\u0442\u0440\u0438\u043c\u043e\u0432 \u043c\u0430\u0442\u0447\u0430","match_watch_2":"\u0421\u043c\u043e\u0442\u0440\u0435\u0442\u044c \u0432\u0438\u0434\u0435\u043e \u043c\u0430\u0442\u0447\u0430","match_nowatch_2":"\u041d\u0435\u0442 \u0432\u0438\u0434\u0435\u043e \u043c\u0430\u0442\u0447\u0430","match_watch_help":"\u0421\u043c\u043e\u0442\u0440\u0438 \u043c\u0430\u0442\u0447 \u043d\u0430 \u043b\u044e\u0431\u043e\u043c \u0441\u0442\u0440\u0438\u043c\u0435 \u0438\u0437 \u0441\u043f\u0438\u0441\u043a\u0430 \u0441\u043f\u0440\u0430\u0432\u0430","match_watch_future":"\u041f\u043e\u0441\u043c\u043e\u0442\u0440\u0435\u0442\u044c \u0441\u0442\u0440\u0438\u043c \u043c\u0430\u0442\u0447\u0430 %t1% \u043f\u0440\u043e\u0442\u0438\u0432 %t2% \u043c\u043e\u0436\u043d\u043e <span class=\"sct\" data-format=\"%j% %m%%y% \u0432 %h%:%i% %tz%\">%date%<\/span>","match_watch_future_pubg":"\u041f\u043e\u0441\u043c\u043e\u0442\u0440\u0435\u0442\u044c \u0441\u0442\u0440\u0438\u043c <b>\u043c\u0430\u0442\u0447\u0430 %n%<\/b> \u043c\u043e\u0436\u043d\u043e <span class=\"sct\" data-format=\"%j% %m%%y% \u0432 %h%:%i% %tz%\">%date%<\/span>","match_defwin":"\u0422\u0435\u0445\u043d\u0438\u0447\u0435\u0441\u043a\u043e\u0435 \u043f\u043e\u0440\u0430\u0436\u0435\u043d\u0438\u0435","match_start":"\u041c\u0430\u0442\u0447 \u043d\u0430\u0447\u0430\u043b\u0441\u044f","match_map":{"200":"\u0418\u0434\u0435\u0442 %n%-\u0439 \u0440\u0430\u0443\u043d\u0434","313":"\u0418\u0434\u0435\u0442 %n%-\u044f \u043a\u0430\u0440\u0442\u0430","582":"\u0418\u0434\u0435\u0442 %n%-\u044f \u043a\u0430\u0440\u0442\u0430","704":"\u0418\u0434\u0435\u0442 %n%-\u0439 \u0440\u0430\u0443\u043d\u0434","800":"\u0418\u0434\u0435\u0442 %n%-\u044f \u043a\u0430\u0440\u0442\u0430"},"match_break":"\u041f\u0435\u0440\u0435\u0440\u044b\u0432","match_ends":"\u041c\u0430\u0442\u0447 \u043e\u043a\u043e\u043d\u0447\u0435\u043d","match_future":"\u041c\u0430\u0442\u0447 \u043d\u0435 \u043d\u0430\u0447\u0430\u043b\u0441\u044f","match_unk":"\u0414\u0430\u0442\u0430 \u043c\u0430\u0442\u0447\u0430 \u043d\u0435\u0438\u0437\u0432\u0435\u0441\u0442\u043d\u0430","match_odds":"\u041a\u043e\u044d\u0444\u0444\u0438\u0446\u0438\u0435\u043d\u0442\u044b","match_odds_title":"\u0421\u0442\u0430\u0432\u043a\u0438 \u043d\u0430 \u043c\u0430\u0442\u0447","match_result":"\u0420\u0435\u0437\u0443\u043b\u044c\u0442\u0430\u0442\u044b \u043c\u0430\u0442\u0447\u0430","bet":"\u0421\u0434\u0435\u043b\u0430\u0442\u044c \u0441\u0442\u0430\u0432\u043a\u0443","match_teams":"\u041a\u043e\u043c\u0430\u043d\u0434\u044b \u0438 \u0441\u043e\u0441\u0442\u0430\u0432\u044b","match_players":"\u0418\u0433\u0440\u043e\u043a\u0438","player_rate":"\u041e\u0431\u0449\u0438\u0439 \u0440\u0435\u0439\u0442\u0438\u043d\u0433","form":"\u0424\u043e\u0440\u043c\u0430","match_stats_players":"\u0421\u0440\u0430\u0432\u043d\u0435\u043d\u0438\u0435 \u0438\u0433\u0440\u043e\u043a\u043e\u0432","match_stats_teams":"\u0421\u0440\u0430\u0432\u043d\u0435\u043d\u0438\u0435 \u043a\u043e\u043c\u0430\u043d\u0434","match_stats_teams_txt":"\u0417\u0430 \u043f\u043e\u0441\u043b\u0435\u0434\u043d\u0438\u0435 10 \u043c\u0430\u0442\u0447\u0435\u0439","players_stats":"\u0421\u0442\u0430\u0442\u0438\u0441\u0442\u0438\u043a\u0430 \u0438\u0433\u0440\u043e\u043a\u043e\u0432","map":"\u041a\u0430\u0440\u0442\u0430","pubg_map":"\u041a\u0430\u0440\u0442\u0430 \u0432\u044b\u0441\u0430\u0434\u043a\u0438","pubg_zone":"\u0417\u043e\u043d\u0430","bans":"\u0411\u0430\u043d\u044b","chart_1":"\u0414\u0430\u043d\u043d\u044b\u0435 \u0432 \u0433\u0440\u0430\u0444\u0438\u043a\u0435 \u043f\u0440\u0438\u043c\u0435\u0440\u043d\u044b\u0435, \u0442\u043e\u0447\u043d\u044b\u0435 \u0434\u0430\u043d\u043d\u044b\u0435 \u043f\u043e\u044f\u0432\u044f\u0442\u0441\u044f \u043f\u043e\u0441\u043b\u0435 \u043e\u0431\u0440\u0430\u0431\u043e\u0442\u043a\u0438 \u0440\u0435\u043f\u043b\u0435\u044f \u043c\u0430\u0442\u0447\u0430","team_compare":{"safe":"\u041b\u0435\u0433\u043a\u0430\u044f \u043b\u0438\u043d\u0438\u044f","hard":"\u0421\u043b\u043e\u0436\u043d\u0430\u044f \u043b\u0438\u043d\u0438\u044f","mid":"\u0426\u0435\u043d\u0442\u0440\u0430\u043b\u044c\u043d\u0430\u044f \u043b\u0438\u043d\u0438\u044f","forest":"\u041b\u0435\u0441","games":"\u0418\u0441\u0442\u043e\u0440\u0438\u044f \u043b\u0438\u0447\u043d\u044b\u0445 \u0432\u0441\u0442\u0440\u0435\u0447","match":"\u041f\u043e\u0441\u043b\u0435\u0434\u043d\u0438\u0435 6 \u043c\u0430\u0442\u0447\u0435\u0439"},"team_compare_txt":{"safe":"\u0421\u043a\u043e\u043b\u044c\u043a\u043e \u0437\u043e\u043b\u043e\u0442\u0430 (\u043e\u0442 \u043c\u0430\u043a\u0441\u0438\u043c\u0430\u043b\u044c\u043d\u043e \u0432\u043e\u0437\u043c\u043e\u0436\u043d\u043e\u0433\u043e) \u0437\u0430\u0431\u0438\u0440\u0430\u044e\u0442 \u0441 \u043b\u0435\u0433\u043a\u043e\u0439 \u043b\u0438\u043d\u0438\u0438","hard":"\u0421\u043a\u043e\u043b\u044c\u043a\u043e \u0437\u043e\u043b\u043e\u0442\u0430 (\u043e\u0442 \u043c\u0430\u043a\u0441\u0438\u043c\u0430\u043b\u044c\u043d\u043e \u0432\u043e\u0437\u043c\u043e\u0436\u043d\u043e\u0433\u043e) \u0437\u0430\u0431\u0438\u0440\u0430\u044e\u0442 \u0441\u043e \u0441\u043b\u043e\u0436\u043d\u043e\u0439 \u043b\u0438\u043d\u0438\u0438","mid":"\u0421\u043a\u043e\u043b\u044c\u043a\u043e \u0437\u043e\u043b\u043e\u0442\u0430 (\u043e\u0442 \u043c\u0430\u043a\u0441\u0438\u043c\u0430\u043b\u044c\u043d\u043e \u0432\u043e\u0437\u043c\u043e\u0436\u043d\u043e\u0433\u043e) \u0437\u0430\u0431\u0438\u0440\u0430\u044e\u0442 \u0441 \u0446\u0435\u043d\u0442\u0440\u0430","forest":"\u0421\u043a\u043e\u043b\u044c\u043a\u043e \u0437\u043e\u043b\u043e\u0442\u0430 (\u043e\u0442 \u043c\u0430\u043a\u0441\u0438\u043c\u0430\u043b\u044c\u043d\u043e \u0432\u043e\u0437\u043c\u043e\u0436\u043d\u043e\u0433\u043e) \u0437\u0430\u0431\u0438\u0440\u0430\u044e\u0442 \u0438\u0437 \u043b\u0435\u0441\u0430","games":"\u0427\u0438\u0441\u043b\u043e \u0432\u044b\u0438\u0433\u0440\u0430\u043d\u043d\u044b\u0445 \u043c\u0430\u0442\u0447\u0435\u0439 \u0432 \u043b\u0438\u0447\u043d\u044b\u0445 \u0432\u0441\u0442\u0440\u0435\u0447\u0430\u0445 \u0437\u0430 \u043f\u043e\u0441\u043b\u0435\u0434\u043d\u0438\u0439 \u0433\u043e\u0434","match":"\u0421\u043a\u043e\u043b\u044c\u043a\u043e \u0438\u0437 6 \u043f\u043e\u0441\u043b\u0435\u0434\u043d\u0438\u0445 \u043c\u0430\u0442\u0447\u0435\u0439 \u0432\u044b\u0438\u0433\u0440\u0430\u043b\u0438"},"pts":"\u041e\u0447\u043a\u0438","rds":"\u0421\u0447\u0435\u0442 \u043f\u043e \u0440\u0430\u0443\u043d\u0434\u0430\u043c","cteam":"\u043a\u043e\u043c\u0430\u043d\u0434","cplayer":"\u0438\u0433\u0440\u043e\u043a\u043e\u0432","open_deck":"\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u043a\u043e\u043b\u043e\u0434\u0443","k":"\u0427\u0438\u0441\u043b\u043e \u0443\u0431\u0438\u0439\u0441\u0442\u0432","khs":"\u0427\u0438\u0441\u043b\u043e \u0443\u0431\u0438\u0439\u0441\u0442\u0432 (\u0425\u0435\u0434\u0448\u043e\u0442\u044b)","d":"\u0427\u0438\u0441\u043b\u043e \u0441\u043c\u0435\u0440\u0442\u0435\u0439","a":"\u0427\u0438\u0441\u043b\u043e \u0430\u0441\u0441\u0438\u0441\u0442\u043e\u0432","asf":"\u0410\u0441\u0441\u0438\u0441\u0442\u044b (Flash \u0430\u0441\u0441\u0438\u0441\u0442\u044b)","askn":"\u0410\u0441\u0441\u0438\u0441\u0442\u044b (\u0434\u043e\u0431\u0438\u043b \u043f\u043e\u0441\u043b\u0435 \u043d\u043e\u043a\u0430 \u0441\u043e\u044e\u0437\u043d\u0438\u043a\u0430)","kdd":"\u0420\u0430\u0437\u043d\u0438\u0446\u0430: \u0443\u0431\u0438\u0439\u0441\u0442\u0432\u0430 \u0438 \u0441\u043c\u0435\u0440\u0442\u0438","kda":"(\u0447\u0438\u0441\u043b\u043e \u0443\u0431\u0438\u0439\u0441\u0442\u0432 + \u0430\u0441\u0441\u0438\u0441\u0442\u043e\u0432) \/ \u0447\u0438\u0441\u043b\u043e \u0441\u043c\u0435\u0440\u0442\u0435\u0439","knock":"Knocks (\u043d\u043e\u043a\u0438 \u0431\u0435\u0437 \u0443\u0431\u0438\u0439\u0441\u0442\u0432)","stolen":"\u0423\u043a\u0440\u0430\u0434\u0435\u043d\u043d\u044b\u0435 \u0443\u0431\u0438\u0439\u0441\u0442\u0432\u0430 (\u043a\u043e\u0433\u0434\u0430 knock \u0441\u0434\u0435\u043b\u0430\u043b \u0441\u043e\u043f\u0435\u0440\u043d\u0438\u043a)","adr":"\u0421\u0440\u0435\u0434\u043d\u0438\u0439 \u0443\u0440\u043e\u043d \u0437\u0430 \u0440\u0430\u0443\u043d\u0434","hss":"\u0425\u0435\u0434\u0448\u043e\u0442\u044b (\u0438\u0437 \u0432\u0441\u0435\u0445 \u0432\u044b\u0441\u0442\u0440\u0435\u043b\u043e\u0432)","fk":"\u041f\u0435\u0440\u0432\u043e\u0435 \u0443\u0431\u0438\u0439\u0441\u0442\u0432\u043e","fd":"\u041f\u0435\u0440\u0432\u0430\u044f \u0441\u043c\u0435\u0440\u0442\u044c","fkd":"\u0420\u0430\u0437\u043d\u0438\u0446\u0430: \u043f\u0435\u0440\u0432\u043e\u0435 \u0443\u0431\u0438\u0439\u0441\u0442\u0432\u043e","gold":"Gold","gold_earn":"\u0417\u0430\u0440\u0430\u0431\u043e\u0442\u0430\u043d\u043e \u0437\u043e\u043b\u043e\u0442\u0430","nw":"\u0426\u0435\u043d\u043d\u043e\u0441\u0442\u044c \u0433\u0435\u0440\u043e\u044f","lh":"\u0414\u043e\u0431\u0438\u0442\u043e \u043a\u0440\u0438\u043f\u043e\u0432","lhdn":"\u0414\u043e\u0431\u0438\u0442\u043e \u043a\u0440\u0438\u043f\u043e\u0432: \u0447\u0443\u0436\u0438\u0445\/\u0441\u0432\u043e\u0438\u0445","lhln":"\u0414\u043e\u0431\u0438\u0442\u043e \u043c\u0438\u043d\u044c\u043e\u043d\u043e\u0432 (\u043d\u0435\u0439\u0442\u0440\u0430\u043b)","gpm":"\u0417\u043e\u043b\u043e\u0442\u043e \u0432 \u043c\u0438\u043d\u0443\u0442\u0443","xpm":"\u041e\u043f\u044b\u0442 \u0432 \u043c\u0438\u043d\u0443\u0442\u0443","wards":"\u0412\u0430\u0440\u0434\u044b: \u043f\u043e\u0441\u0442\u0430\u0432\u043b\u0435\u043d\u043e\/\u0440\u0430\u0437\u0440\u0443\u0448\u0435\u043d\u043e","heal":"\u041b\u0435\u0447\u0435\u043d\u0438\u0435","dmg":"\u0423\u0440\u043e\u043d","dmgtl":"\u041e\u0431\u0449\u0438\u0439 \u0443\u0440\u043e\u043d","dmgb":"\u0423\u0440\u043e\u043d \u043f\u043e \u0437\u0434\u0430\u043d\u0438\u044f\u043c","dmgh":"\u0423\u0440\u043e\u043d \u043f\u043e \u0433\u0435\u0440\u043e\u044f\u043c","dmgtk":"\u041f\u043e\u043b\u0443\u0447\u0435\u043d\u043d\u044b\u0439 \u0443\u0440\u043e\u043d","fights":"\u0423\u0447\u0430\u0441\u0442\u0438\u0435 \u0432 \u0443\u0431\u0438\u0439\u0441\u0442\u0432\u0430\u0445","kast":"% \u0440\u0430\u0443\u043d\u0434\u043e\u0432 \u0432 \u043a\u043e\u0442\u043e\u0440\u044b\u0445 \u0438\u0433\u0440\u043e\u043a \u0443\u0431\u0438\u043b, \u043f\u043e\u043c\u043e\u0433, \u0432\u044b\u0436\u0438\u043b \u0438\u043b\u0438 \u0431\u044b\u043b \u0440\u0430\u0437\u043c\u0435\u043d\u044f\u043d","surv":"\u0412\u0440\u0435\u043c\u044f \u0432\u044b\u0436\u0438\u0432\u0430\u043d\u0438\u044f","lk":"\u0421\u0430\u043c\u043e\u0435 \u0434\u0430\u043b\u044c\u043d\u0435\u0435 \u0443\u0431\u0438\u0439\u0441\u0442\u0432\u043e","dist":"\u041f\u0440\u043e\u0439\u0434\u0435\u043d\u043d\u043e\u0435 \u0440\u0430\u0441\u0441\u0442\u043e\u044f\u043d\u0438\u0435","role":{"1":"Carry","2":"Mid","3":"Offlane","4":"Support","5":"Support","6":"Tank","7":"Flex","8":"DPS","9":"Support","10":"Top","11":"Jungle","12":"Mid","13":"AD Carry","14":"Support","15":"IGL","16":"Sniper","17":"Rifler","901":"\u0422\u0440\u0435\u043d\u0435\u0440"},"month":{"1":"\u044f\u043d\u0432\u0430\u0440\u044f","2":"\u0444\u0435\u0432\u0440\u0430\u043b\u044f","3":"\u043c\u0430\u0440\u0442\u0430","4":"\u0430\u043f\u0440\u0435\u043b\u044f","5":"\u043c\u0430\u044f","6":"\u0438\u044e\u043d\u044f","7":"\u0438\u044e\u043b\u044f","8":"\u0430\u0432\u0433\u0443\u0441\u0442\u0430","9":"\u0441\u0435\u043d\u0442\u044f\u0431\u0440\u044f","10":"\u043e\u043a\u0442\u044f\u0431\u0440\u044f","11":"\u043d\u043e\u044f\u0431\u0440\u044f","12":"\u0434\u0435\u043a\u0430\u0431\u0440\u044f"},"list_country":{"32":"\u0410\u0432\u0441\u0442\u0440\u0430\u043b\u0438\u044f","15":"\u0410\u0432\u0441\u0442\u0440\u0438\u044f","90":"\u0410\u0437\u0435\u0440\u0431\u0430\u0439\u0434\u0436\u0430\u043d","57":"\u0410\u043b\u0430\u043d\u0434\u0441\u043a\u0438\u0435 \u043e\u0441\u0442\u0440\u043e\u0432\u0430","70":"\u0410\u043b\u0431\u0430\u043d\u0438\u044f","61":"\u0410\u043b\u0436\u0438\u0440","11":"\u0410\u043d\u0433\u043b\u0438\u044f","47":"\u0410\u0440\u0433\u0435\u043d\u0442\u0438\u043d\u0430","99":"\u0410\u0440\u043c\u0435\u043d\u0438\u044f","116":"\u0410\u0444\u0433\u0430\u043d\u0438\u0441\u0442\u0430\u043d","72":"\u0410\u0444\u0440\u0438\u043a\u0430","120":"\u0411\u0430\u043d\u0433\u043b\u0430\u0434\u0435\u0448","131":"\u0411\u0430\u0440\u0431\u0430\u0434\u043e\u0441","71":"\u0411\u0430\u0445\u0440\u0435\u0439\u043d","12":"\u0411\u0435\u043b\u0430\u0440\u0443\u0441\u044c","34":"\u0411\u0435\u043b\u044c\u0433\u0438\u044f","51":"\u0411\u0438\u0440\u043c\u0430","20":"\u0411\u043e\u043b\u0433\u0430\u0440\u0438\u044f","62":"\u0411\u043e\u043b\u0438\u0432\u0438\u044f","43":"\u0411\u043e\u0441\u043d\u0438\u044f \u0438 \u0413\u0435\u0440\u0446\u0435\u0433\u043e\u0432\u0438\u043d\u0430","19":"\u0411\u0440\u0430\u0437\u0438\u043b\u0438\u044f","64":"\u0411\u0440\u0443\u043d\u0435\u0439","134":"\u0411\u0443\u0440\u043a\u0438\u043d\u0430-\u0424\u0430\u0441\u043e","49":"\u0411\u0443\u0442\u0430\u043d","96":"\u0412\u0435\u043b\u0438\u043a\u043e\u0431\u0440\u0438\u0442\u0430\u043d\u0438\u044f","53":"\u0412\u0435\u043d\u0433\u0440\u0438\u044f","78":"\u0412\u0435\u043d\u0435\u0441\u0443\u044d\u043b\u0430","46":"\u0412\u044c\u0435\u0442\u043d\u0430\u043c","133":"\u0413\u0430\u0439\u0430\u043d\u0430","103":"\u0413\u0432\u0430\u0442\u0435\u043c\u0430\u043b\u0430","5":"\u0413\u0435\u0440\u043c\u0430\u043d\u0438\u044f","56":"\u0413\u043e\u043d\u043a\u043e\u043d\u0433","41":"\u0413\u0440\u0435\u0446\u0438\u044f","74":"\u0413\u0440\u0443\u0437\u0438\u044f","24":"\u0414\u0430\u043d\u0438\u044f","101":"\u0414\u043e\u043c\u0438\u043d\u0438\u043a\u0430\u043d\u0441\u043a\u0430\u044f \u0420\u0435\u0441\u043f\u0443\u0431\u043b\u0438\u043a\u0430","82":"\u0414\u0440\u0443\u0433\u0438\u0435","25":"\u0415\u0432\u0440\u043e\u043f\u0430","89":"\u0415\u0433\u0438\u043f\u0435\u0442","66":"\u0418\u0437\u0440\u0430\u0438\u043b\u044c","52":"\u0418\u043d\u0434\u0438\u044f","44":"\u0418\u043d\u0434\u043e\u043d\u0435\u0437\u0438\u044f","23":"\u0418\u043d\u0442\u0435\u0440\u043d\u0430\u0446\u0438\u043e\u043d\u0430\u043b\u044c\u043d\u0430\u044f","48":"\u0418\u043e\u0440\u0434\u0430\u043d\u0438\u044f","98":"\u0418\u0440\u0430\u043a","76":"\u0418\u0440\u0430\u043d","16":"\u0418\u0440\u043b\u0430\u043d\u0434\u0438\u044f","80":"\u0418\u0441\u043b\u0430\u043d\u0434\u0438\u044f","8":"\u0418\u0441\u043f\u0430\u043d\u0438\u044f","22":"\u0418\u0442\u0430\u043b\u0438\u044f","31":"\u041a\u0430\u0437\u0430\u0445\u0441\u0442\u0430\u043d","109":"\u041a\u0430\u043c\u0431\u043e\u0434\u0436\u0438\u044f","13":"\u041a\u0430\u043d\u0430\u0434\u0430","129":"\u041a\u0430\u0442\u0430\u0440","106":"\u041a\u0438\u043f\u0440","65":"\u041a\u0438\u0440\u0433\u0438\u0437\u0438\u044f","4":"\u041a\u0438\u0442\u0430\u0439","100":"\u041a\u043e\u043b\u0443\u043c\u0431\u0438\u044f","1":"\u041a\u043e\u0440\u0435\u044f","127":"\u041a\u043e\u0441\u043e\u0432\u043e","108":"\u041a\u043e\u0441\u0442\u0430-\u0420\u0438\u043a\u0430","114":"\u041a\u0443\u0431\u0430","125":"\u041a\u0443\u0432\u0435\u0439\u0442","119":"\u041a\u044e\u0440\u0430\u0441\u0430\u043e","113":"\u041b\u0430\u043e\u0441","86":"\u041b\u0430\u0442\u0432\u0438\u044f","54":"\u041b\u0438\u0432\u0430\u043d","88":"\u041b\u0438\u0432\u0438\u044f","40":"\u041b\u0438\u0442\u0432\u0430","91":"\u041b\u044e\u043a\u0441\u0435\u043c\u0431\u0443\u0440\u0433","126":"\u041c\u0430\u0432\u0440\u0438\u043a\u0438\u0439","67":"\u041c\u0430\u043a\u0430\u043e","58":"\u041c\u0430\u043a\u0435\u0434\u043e\u043d\u0438\u044f","28":"\u041c\u0430\u043b\u0430\u0439\u0437\u0438\u044f","104":"\u041c\u0430\u043b\u044c\u0442\u0430","87":"\u041c\u0430\u0440\u043e\u043a\u043a\u043e","79":"\u041c\u0435\u043a\u0441\u0438\u043a\u0430","135":"\u041c\u043e\u0437\u0430\u043c\u0431\u0438\u043a","77":"\u041c\u043e\u043b\u0434\u0430\u0432\u0438\u044f","60":"\u041c\u043e\u043d\u0433\u043e\u043b\u0438\u044f","50":"\u041c\u044c\u044f\u043d\u043c\u0430","94":"\u041d\u0435\u043f\u0430\u043b","17":"\u041d\u0438\u0434\u0435\u0440\u043b\u0430\u043d\u0434\u044b","118":"\u041d\u0438\u043a\u0430\u0440\u0430\u0433\u0443\u0430","55":"\u041d\u043e\u0432\u0430\u044f \u0417\u0435\u043b\u0430\u043d\u0434\u0438\u044f","117":"\u041d\u043e\u0432\u0430\u044f \u041a\u0430\u043b\u0435\u0434\u043e\u043d\u0438\u044f","6":"\u041d\u043e\u0440\u0432\u0435\u0433\u0438\u044f","97":"\u041e\u0410\u042d","130":"\u041e\u043c\u0430\u043d","59":"\u041f\u0430\u043a\u0438\u0441\u0442\u0430\u043d","81":"\u041f\u0430\u043b\u0435\u0441\u0442\u0438\u043d\u0430","111":"\u041f\u0430\u043d\u0430\u043c\u0430","121":"\u041f\u0430\u0440\u0430\u0433\u0432\u0430\u0439","36":"\u041f\u0435\u0440\u0443","21":"\u041f\u043e\u043b\u044c\u0448\u0430","45":"\u041f\u043e\u0440\u0442\u0443\u0433\u0430\u043b\u0438\u044f","85":"\u041f\u0443\u044d\u0440\u0442\u043e-\u0420\u0438\u043a\u043e","3":"\u0420\u043e\u0441\u0441\u0438\u044f","39":"\u0420\u0443\u043c\u044b\u043d\u0438\u044f","102":"\u0421\u0430\u043b\u044c\u0432\u0430\u0434\u043e\u0440","115":"\u0421\u0430\u0443\u0434\u043e\u0432\u0441\u043a\u0430\u044f \u0410\u0440\u0430\u0432\u0438\u044f","124":"\u0421\u0435\u043d\u0435\u0433\u0430\u043b","37":"\u0421\u0435\u0440\u0431\u0438\u044f","27":"\u0421\u0438\u043d\u0433\u0430\u043f\u0443\u0440","107":"\u0421\u0438\u0440\u0438\u044f","42":"\u0421\u043b\u043e\u0432\u0430\u043a\u0438\u044f","83":"\u0421\u043b\u043e\u0432\u0435\u043d\u0438\u044f","123":"\u0421\u041d\u0413","2":"\u0421\u0428\u0410","122":"\u0422\u0430\u0434\u0436\u0438\u043a\u0438\u0441\u0442\u0430\u043d","30":"\u0422\u0430\u0438\u043b\u0430\u043d\u0434","7":"\u0422\u0430\u0439\u0432\u0430\u043d\u044c","128":"\u0422\u0440\u0438\u043d\u0438\u0434\u0430\u0434 \u0438 \u0422\u043e\u0431\u0430\u0433\u043e","73":"\u0422\u0443\u043d\u0438\u0441","112":"\u0422\u0443\u0440\u043a\u043c\u0435\u043d\u0438\u044f","38":"\u0422\u0443\u0440\u0446\u0438\u044f","105":"\u0423\u0437\u0431\u0435\u043a\u0438\u0441\u0442\u0430\u043d","14":"\u0423\u043a\u0440\u0430\u0438\u043d\u0430","69":"\u0423\u0440\u0443\u0433\u0432\u0430\u0439","29":"\u0424\u0438\u043b\u0438\u043f\u043f\u0438\u043d\u044b","33":"\u0424\u0438\u043d\u043b\u044f\u043d\u0434\u0438\u044f","18":"\u0424\u0440\u0430\u043d\u0446\u0438\u044f","63":"\u0425\u043e\u0440\u0432\u0430\u0442\u0438\u044f","84":"\u0427\u0435\u0440\u043d\u043e\u0433\u043e\u0440\u0438\u044f","26":"\u0427\u0435\u0445\u0438\u044f","35":"\u0427\u0438\u043b\u0438","75":"\u0428\u0432\u0435\u0439\u0446\u0430\u0440\u0438\u044f","10":"\u0428\u0432\u0435\u0446\u0438\u044f","93":"\u0428\u0440\u0438-\u041b\u0430\u043d\u043a\u0430","110":"\u042d\u043a\u0432\u0430\u0434\u043e\u0440","68":"\u042d\u0441\u0442\u043e\u043d\u0438\u044f","95":"\u042e\u0433\u043e\u0441\u043b\u0430\u0432\u0438\u044f","92":"\u042e\u0436\u043d\u0430\u044f \u0410\u0444\u0440\u0438\u043a\u0430","132":"\u042f\u043c\u0430\u0439\u043a\u0430","9":"\u042f\u043f\u043e\u043d\u0438\u044f"}};
+        //var games = {"582":{"id":582,"eng":"dota-2","pid":0,"title":"Dota 2","is_menu":"1","is_teams":"1"},"704":{"id":704,"eng":"csgo","pid":0,"title":"CS:GO","is_menu":"1","is_teams":"1"},"313":{"id":313,"eng":"lol","pid":0,"title":"LoL","is_menu":"1","is_teams":"1"},"100":{"id":100,"eng":"pubg","pid":0,"title":"PUBG","is_menu":"1","is_teams":"1"},"755":{"id":755,"eng":"hearthstone","pid":0,"title":"Hearthstone","is_menu":"1","is_teams":"0"},"800":{"id":800,"eng":"overwatch","pid":0,"title":"Overwatch","is_menu":"1","is_teams":"1"},"200":{"id":200,"eng":"valorant","pid":0,"title":"Valorant","is_menu":"1","is_teams":"1"},"300":{"id":300,"eng":"fortnite","pid":0,"title":"Fortnite","is_menu":"1","is_teams":"0"},"600":{"id":600,"eng":"r6","pid":0,"title":"Rainbow Six","is_menu":"1","is_teams":"1"}};
 
-        match_chart(1, data)
+        $(document).ready(function () {
+            match_chart(1, data.match_data);
 
-        function convert_val(val) {
-            var z = (val < 0 ? '-' : '');
-            val = Math.abs(val);
-            if (val >= 1000) {
-                val = val / 1000;
-                return z + (Math.round(val * 10) / 10) + 'k';
-            } else {
-                return z + val;
-            }
-        }
-        function match_chart(num, data) {
-            
-            var swidth = $('#chart' + num).width();
-            var width = swidth - 49;
-            var sheight = 0;
-            var path1 = [];
-            var path2 = [];
-            var clip2 = [];
-            var path4 = [];
-            var path3 = [];
-            var color = { 't1': '#92A525', 't2': '#C23C2A', 't0': '#BABDCE' };
-            var e = [];
-            var min = -5000;
-            var max = 5000;
-            var x_min = null;
-            var x_max = 0;
-            var km = 0;
-            var g, i, x, y;
-            var h1, h2, h3, h4 = '';
-            for (i in data.gold) {
-                if (i > data.duration) {
-                    break;
-                }
-                g = data.gold[i];
-                if (g < min) {
-                    min = g;
-                } else if (g > max) {
-                    max = g;
-                }
-                x_max = i;
-                if (x_min === null) {
-                    x_min = (Math.floor(i / 60)) * 60;
-                }
-            }
-            if (x_max < 300) {
-                x_max = 300;
-            }
-            if (x_min === null) {
-                x_min = 0;
-            }
-            var x_len = x_max - x_min;
-            var sum = Math.abs(min) + max;
-            var ys = Math.ceil((sum / 5) / 1000) * 1000;
-            max = ys * (Math.ceil(max / ys));
-            min = ys * (Math.floor(min / ys));
-            sum = Math.abs(min) + max;
-            var ykol = Math.ceil(sum / ys);
-            sheight = 114 + (ykol + 1) * 30;
-            var height = sheight - 90;
-            var k1 = height / sum;
-            var k2 = width / x_len;
-            var z = max * k1;
-            var lwidth = x_len * k2 + 49;
-            var lheight = ykol * ys * k1 + 15.5;
-            var ymin = min - ys;
-            for (i = ymin; i <= max; i += ys) {
-                y = Math.round((i < 0 ? Math.abs(i) * k1 + z : z - i * k1)) + 5.5;
-                if (i >= min) {
-                    h2 += '<text x="28" y="' + (y + 3) + '" style="color:#525252;font-size:11px;fill:#525252;width:199px;text-overflow:clip;" text-anchor="end" opacity="1">' + (i / 1000) + 'k</text>';
+            tippy('.tt', {
+                content(reference) {
+                    const innerHTML = reference.getAttribute('title');
+                    return innerHTML;
+                },
+                // hideOnClick: true,
+                // trigger: "click",
+                allowHTML: true,
+                });
+            });
+
+            function convert_val(val) {
+                var z = (val < 0 ? '-' : '');
+                val = Math.abs(val);
+                if (val >= 1000) {
+                    val = val / 1000;
+                    return z + (Math.round(val * 10) / 10) + 'k';
                 } else {
-                    ymin = y;
+                    return z + val;
                 }
-                h4 += '<path fill="none" d="M 39 ' + y + ' L ' + lwidth + ' ' + y + '" stroke="#E9E9E9" stroke-width="1" opacity="1"></path>';
             }
-            var s = Math.ceil((x_len / 15) / 60) * 60;
-            for (i = x_min; i < x_max; i += s) {
-                x = (i - x_min) * k2 + 39;
-                h1 += '<text x="' + (x > swidth - 20 ? swidth - 20 : x) + '" y="' + (lheight + 15) + '" style="color:#525252;font-size:11px;fill:#525252;" text-anchor="middle" opacity="1">' + (i / 60) + ':00</text>';
-                h3 += '<path fill="none" d="M ' + x + ' 6 L ' + x + ' ' + lheight + '" stroke="#E9E9E9" stroke-width="1" opacity="1"></path>';
-            }
-            for (i in data.gold) {
-                g = data.gold[i];
-                x = Math.round((i - x_min) * k2);
-                y = Math.round((g < 0 ? Math.abs(g) * k1 + z : z - g * k1));
-                if (!path1.length) {
-                    path1.push('M 0 ' + y);
-                    path2.push('M 0 ' + y);
-                    clip2.push('M 0 ' + y);
+            function match_chart(num, data) {
+                var swidth = $('#chart' + num).width();
+                var width = swidth - 49;
+                var sheight = 0;
+                var path1 = [];
+                var path2 = [];
+                var clip2 = [];
+                var path4 = [];
+                var path3 = [];
+                var color = { 't1': '#92A525', 't2': '#C23C2A', 't0': '#BABDCE' };
+                var e = [];
+                var min = -5000;
+                var max = 5000;
+                var x_min = null;
+                var x_max = 0;
+                var km = 0;
+                var g, i, x, y;
+                var h1, h2, h3, h4 = '';
+                for (i in data.gold) {
+                    if (i > data.duration) {
+                        break;
+                    }
+                    g = data.gold[i];
+                    if (g < min) {
+                        min = g;
+                    } else if (g > max) {
+                        max = g;
+                    }
+                    x_max = i;
+                    if (x_min === null) {
+                        x_min = (Math.floor(i / 60)) * 60;
+                    }
                 }
-                path1.push('L ' + x + ' ' + y);
-                path2.push('L ' + x + ' ' + y);
-                clip2.push('L ' + x + ' ' + y);
-            }
-            path2.push('L ' + x + ' ' + z);
-            path2.push('L 0 ' + z);
-            clip2.push('L ' + x + ' ' + max);
-            clip2.push('L 0 ' + max);
-            if (data.events != undefined) {
-                for (i in data.events) {
-                    e = [];
-                    var k = 0;
-                    for (j in data.events[i]) {
-                        g = data.events[i][j];
-                        x = (i - x_min) * k2 + 39;
-                        if (g.i == '3') {
-                            var r = 2;
-                            path3.push('<path stroke-dasharray="3" fill="none" d="M ' + x + ' ' + ymin + ' L ' + x + ' ' + min + '" stroke="' + color.t0 + '" stroke-width="1" opacity="1"></path>');
-                            e.push('<b><i>' + convert_val(g.g1) + '</i><s></s><i>' + convert_val(g.g2) + '</i></b>' + (g.d1 > 0 || g.d2 > 0 ? '<u><i>' + convert_val(g.d1) + '</i><s></s><i>' + convert_val(g.d2) + '</i></u>' : ''));
-                            for (var c in g.h) {
-                                var th1 = '';
-                                var th2 = '';
-                                var d = '';
-                                if (g.h[c].t < 0) {
-                                    d = '-';
-                                    g.h[c].t = Math.abs(g.h[c].t);
-                                }
-                                var h = Math.floor(g.h[c].t / 3600);
-                                var m = Math.floor((g.h[c].t - h * 3600) / 60);
-                                var s = g.h[c].t - h * 3600 - m * 60;
-                                g.h[c].t = d + (h ? h + ':' : '') + ('0' + m).slice(-2) + ':' + ('0' + s).slice(-2);
-                                if (Array.isArray(g.h[c].t1)) {
-                                    for (q in g.h[c].t1) {
-                                        th1 += '<img src=/media/game/hero/582/_59/' + g.h[c].t1[q] + '.png>';
+                if (x_max < 300) {
+                    x_max = 300;
+                }
+                if (x_min === null) {
+                    x_min = 0;
+                }
+                var x_len = x_max - x_min;
+                var sum = Math.abs(min) + max;
+                var ys = Math.ceil((sum / 5) / 1000) * 1000;
+                max = ys * (Math.ceil(max / ys));
+                min = ys * (Math.floor(min / ys));
+                sum = Math.abs(min) + max;
+                var ykol = Math.ceil(sum / ys);
+                sheight = 114 + (ykol + 1) * 30;
+                var height = sheight - 90;
+                var k1 = height / sum;
+                var k2 = width / x_len;
+                var z = max * k1;
+                var lwidth = x_len * k2 + 49;
+                var lheight = ykol * ys * k1 + 15.5;
+                var ymin = min - ys;
+                for (i = ymin; i <= max; i += ys) {
+                    y = Math.round((i < 0 ? Math.abs(i) * k1 + z : z - i * k1)) + 5.5;
+                    if (i >= min) {
+                        h2 += '<text x="28" y="' + (y + 3) + '" style="color:#525252;font-size:11px;fill:#525252;width:199px;text-overflow:clip;" text-anchor="end" opacity="1">' + (i / 1000) + 'k</text>';
+                    } else {
+                        ymin = y;
+                    }
+                    h4 += '<path fill="none" d="M 39 ' + y + ' L ' + lwidth + ' ' + y + '" stroke="#E9E9E9" stroke-width="1" opacity="1"></path>';
+                }
+                var s = Math.ceil((x_len / 15) / 60) * 60;
+                for (i = x_min; i < x_max; i += s) {
+                    x = (i - x_min) * k2 + 39;
+                    h1 += '<text x="' + (x > swidth - 20 ? swidth - 20 : x) + '" y="' + (lheight + 15) + '" style="color:#525252;font-size:11px;fill:#525252;" text-anchor="middle" opacity="1">' + (i / 60) + ':00</text>';
+                    h3 += '<path fill="none" d="M ' + x + ' 6 L ' + x + ' ' + lheight + '" stroke="#E9E9E9" stroke-width="1" opacity="1"></path>';
+                }
+
+                for (i in data.gold) {
+                    g = data.gold[i];
+                    x = Math.round((i - x_min) * k2);
+                    y = Math.round((g < 0 ? Math.abs(g) * k1 + z : z - g * k1));
+                    if (!path1.length) {
+                        path1.push('M 0 ' + y);
+                        path2.push('M 0 ' + y);
+                        clip2.push('M 0 ' + y);
+                    }
+                    path1.push('L ' + x + ' ' + y);
+                    path2.push('L ' + x + ' ' + y);
+                    clip2.push('L ' + x + ' ' + y);
+                }
+                path2.push('L ' + x + ' ' + z);
+                path2.push('L 0 ' + z);
+                clip2.push('L ' + x + ' ' + max);
+                clip2.push('L 0 ' + max);
+                if (data.events != undefined) {
+                    for (i in data.events) {
+                        e = [];
+                        var k = 0;
+                        for (let j in data.events[i]) {
+                            g = data.events[i][j];
+                            x = (i - x_min) * k2 + 39;
+                            if (g.i == '3') {
+                                var r = 2;
+                                path3.push('<path stroke-dasharray="3" fill="none" d="M ' + x + ' ' + ymin + ' L ' + x + ' ' + min + '" stroke="' + color.t0 + '" stroke-width="1" opacity="1"></path>');
+                                e.push('<b><i>' + convert_val(g.g1) + '</i><s></s><i>' + convert_val(g.g2) + '</i></b>' + (g.d1 > 0 || g.d2 > 0 ? '<u><i>' + convert_val(g.d1) + '</i><s></s><i>' + convert_val(g.d2) + '</i></u>' : ''));
+                                for (var c in g.h) {
+                                    var th1 = '';
+                                    var th2 = '';
+                                    var d = '';
+                                    if (g.h[c].t < 0) {
+                                        d = '-';
+                                        g.h[c].t = Math.abs(g.h[c].t);
                                     }
-                                } else {
-                                    th1 = '<img src=/media/game/hero/582/_59/' + g.h[c].t1 + '.png>';
-                                }
-                                if (Array.isArray(g.h[c].t2)) {
-                                    for (q in g.h[c].t2) {
-                                        th2 += '<img src=/media/game/hero/582/_59/' + g.h[c].t2[q] + '.png>';
+                                    var h = Math.floor(g.h[c].t / 3600);
+                                    var m = Math.floor((g.h[c].t - h * 3600) / 60);
+                                    var s = g.h[c].t - h * 3600 - m * 60;
+                                    g.h[c].t = d + (h ? h + ':' : '') + ('0' + m).slice(-2) + ':' + ('0' + s).slice(-2);
+                                    if (Array.isArray(g.h[c].t1)) {
+                                        for (q in g.h[c].t1) {
+                                            th1 += '<img src=https://escorenews.com/media/game/hero/582/_59/' + g.h[c].t1[q] + '.png>';
+                                        }
+                                    } else {
+                                        th1 = '<img src=https://escorenews.com/media/game/hero/582/_59/' + g.h[c].t1 + '.png>';
+                                    }
+                                    if (Array.isArray(g.h[c].t2)) {
+                                        for (q in g.h[c].t2) {
+                                            th2 += '<img src=https://escorenews.com/media/game/hero/582/_59/' + g.h[c].t2[q] + '.png>';
+                                            r += 1;
+                                        }
+                                    } else {
+                                        th2 = '<img src=https://escorenews.com/media/game/hero/582/_59/' + g.h[c].t2 + '.png>';
                                         r += 1;
                                     }
-                                } else {
-                                    th2 = '<img src=/media/game/hero/582/_59/' + g.h[c].t2 + '.png>';
-                                    r += 1;
+                                    e.push('<div class=ttside' + (g.h[c].s == 't1' ? 'green' : 'red') + '><span>' + th1 + '</span><div><s></s><i>' + g.h[c].t + '</i></div><span>' + th2 + '</span></div>');
                                 }
-                                e.push('<div class=ttside' + (g.h[c].s == 't1' ? 'green' : 'red') + '><span>' + th1 + '</span><div><s></s><i>' + g.h[c].t + '</i></div><span>' + th2 + '</span></div>');
-                            }
-                            if (r > 8) {
-                                r = 8;
-                            }
-                            k += r + 4;
-                            path4.push('<circle cx="' + x + '" cy="' + ymin + '" r="' + r + '" fill="' + color[g.s] + '" />');
-                        } else if (g.i == '1') {
-                            y = (k == 0 ? ymin - 10 : ymin) + k;
-                            path4.push('<image x="' + (x - 10) + '" y="' + y + '" width="20" height="20" href="/media/game/icon/582/roshan.png"></image>');
-                            path3.push('<path stroke-dasharray="3" fill="none" d="M ' + x + ' ' + ymin + ' L ' + x + ' ' + min + '" stroke="' + color.t0 + '" stroke-width="1" opacity="1"></path>');
-                            if (g.r) {
-                                e.push('<div class=ttside' + (g.r.s == 't1' ? 'green' : (g.r.s == 't2' ? 'red' : 'gray')) + '><em><img src=/media/game/icon/582/roshan.png> ' + (g.r.s != 't0' ? '<b>' + data.teams[g.r.s].title + '</b> убили Рошана' : 'Рошан был убит') + '</em></div>');
-                            }
-                            if (g.a) {
-                                e.push('<div class=ttside' + (g.r.s == 't1' ? 'green' : 'red') + '><em><img src=/media/game/icon/582/aegis.png> <b>' + g.a.h + '</b> подбирает Аегис</em></div>');
-                            }
-                            k += (k > 0 ? 24 : 14);
-                        } else if (g.i == '2') {
-                            var r = 4 + g.b.length * 2;
-                            if (r > 16) {
-                                r = 16;
-                            }
-                            y = (k == 0 ? ymin - r / 2 : ymin) + k;
-                            path4.push('<rect x="' + (x - r / 2) + '" y="' + y + '" width="' + r + '" height="' + r + '" fill="' + color[g.s] + '"></rect>');
-                            path3.push('<path stroke-dasharray="3" fill="none" d="M ' + x + ' ' + ymin + ' L ' + x + ' ' + min + '" stroke="' + color.t0 + '" stroke-width="1" opacity="1"></path>');
-                            k += r + 4;
-                            for (var c in g.b) {
-                                e.push('<div class=ttside' + (g.s == 't1' ? 'green' : 'red') + '><em>' + g.b[c] + '</em></div>');
+                                if (r > 8) {
+                                    r = 8;
+                                }
+                                k += r + 4;
+                                path4.push('<circle cx="' + x + '" cy="' + ymin + '" r="' + r + '" fill="' + color[g.s] + '" />');
+                            } else if (g.i == '1') {
+                                y = (k == 0 ? ymin - 10 : ymin) + k;
+                                path4.push('<image x="' + (x - 10) + '" y="' + y + '" width="20" height="20" href="https://escorenews.com/media/game/icon/582/roshan.png"></image>');
+                                path3.push('<path stroke-dasharray="3" fill="none" d="M ' + x + ' ' + ymin + ' L ' + x + ' ' + min + '" stroke="' + color.t0 + '" stroke-width="1" opacity="1"></path>');
+                                if (g.r) {
+                                    e.push('<div class=ttside' + (g.r.s == 't1' ? 'green' : (g.r.s == 't2' ? 'red' : 'gray')) + '><em><img src=https://escorenews.com/media/game/icon/582/roshan.png> ' + (g.r.s != 't0' ? '<b>' + data.teams[g.r.s].title + '</b> убили Рошана' : 'Рошан был убит') + '</em></div>');
+                                }
+                                if (g.a) {
+                                    e.push('<div class=ttside' + (g.r.s == 't1' ? 'green' : 'red') + '><em><img src=https://escorenews.com/media/game/icon/582/aegis.png> <b>' + g.a.h + '</b> подбирает Аегис</em></div>');
+                                }
+                                k += (k > 0 ? 24 : 14);
+                            } else if (g.i == '2') {
+                                var r = 4 + g.b.length * 2;
+                                if (r > 16) {
+                                    r = 16;
+                                }
+                                y = (k == 0 ? ymin - r / 2 : ymin) + k;
+                                path4.push('<rect x="' + (x - r / 2) + '" y="' + y + '" width="' + r + '" height="' + r + '" fill="' + color[g.s] + '"></rect>');
+                                path3.push('<path stroke-dasharray="3" fill="none" d="M ' + x + ' ' + ymin + ' L ' + x + ' ' + min + '" stroke="' + color.t0 + '" stroke-width="1" opacity="1"></path>');
+                                k += r + 4;
+                                for (var c in g.b) {
+                                    e.push('<div class=ttside' + (g.s == 't1' ? 'green' : 'red') + '><em>' + g.b[c] + '</em></div>');
+                                }
                             }
                         }
+                        path4.push('<rect x="' + (x - 10) + '" y="' + (ymin - 10) + '" width="20" height="' + (k + 20) + '" fill="transparent" class="tt" id="'+i+'" title="<div class=ttgraph>' + e.join('') + '</div>"></rect>');
+                        if (k > km) {
+                            km = k;
+                        }
                     }
-                    path4.push('<rect x="' + (x - 10) + '" y="' + (ymin - 10) + '" width="20" height="' + (k + 20) + '" fill="transparent" class="tt" title="<div class=ttgraph>' + e.join('') + '</div>"></rect>');
-                    if (k > km) {
-                        km = k;
+                    if (km > 1) {
+                        sheight = sheight + km - 20;
                     }
                 }
-                if (km > 1) {
-                    sheight = sheight + km - 20;
-                }
+                var html = '<svg version="1.1" style="font-family:&quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, Arial, Helvetica, sans-serif;font-size:12px;" xmlns="http://www.w3.org/2000/svg" width="' + swidth + '" height="' + sheight + '">';
+                html += '<desc>Created by escorenews.com</desc><defs>';
+                html += '<clipPath id="highcharts-' + num + '-1"><rect x="0" y="0" width="' + swidth + '" height="' + sheight + '"></rect></clipPath>';
+                html += '<clipPath id="highcharts-' + num + '-2" transform="translate(39,6) scale(1 1)"><path d="' + clip2.join(' ') + '"></clipPath>';
+                html += '<clipPath id="highcharts-' + num + '-4"><rect x="0" y="' + z + '" width="' + width + '" height="' + (Math.abs(min * k1)) + '"></rect></clipPath>';
+                html += '<clipPath id="highcharts-' + num + '-5"><rect x="0" y="0" width="' + width + '" height="' + (max * k1) + '"></rect></clipPath></defs>';
+                html += '<rect x="0" y="0" width="' + swidth + '" height="' + sheight + '" strokeWidth="0" fill="transparent"></rect>';
+                html += '<g>' + h3 + '</g><g>' + h4 + '</g><g>' + h1 + '</g><g>' + h2 + '</g>';
+                html += '<g clip-path="url(#highcharts-' + num + '-2)">' + path3.join('') + '</g>';
+                html += '<g>' + path4.join('') + '</g>';
+                html += '<g><g class="highcharts-series" visibility="visible" zIndex="0.1" transform="translate(39,6) scale(1 1)" clip-path="url(#highcharts-' + num + '-1)"><path fill="rgba(194,60,42,0.4)" d="' + path2.join(' ') + '" zIndex="0" clip-path="url(#highcharts-' + num + '-4)"></path><path fill="rgba(146,165,37,0.4)" d="' + path2.join(' ') + '" zIndex="0" clip-path="url(#highcharts-' + num + '-5)"></path><path fill="none" d="' + path1.join(' ') + '" stroke="#C23C2A" stroke-width="3" zIndex="1" stroke-linejoin="round" stroke-linecap="round" clip-path="url(#highcharts-' + num + '-4)"></path><path fill="none" d="' + path1.join(' ') + '" stroke="#92A525" stroke-width="3" zIndex="1" stroke-linejoin="round" stroke-linecap="round" clip-path="url(#highcharts-' + num + '-5)"></path></g></g>';
+                html += '</svg>';
+
+                $('#chart' + num).html(html);
             }
-            var html = '<svg version="1.1" style="font-family:&quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, Arial, Helvetica, sans-serif;font-size:12px;" xmlns="http://www.w3.org/2000/svg" width="' + swidth + '" height="' + sheight + '">';
-            html += '<desc>Created by escorenews.com</desc><defs>';
-            html += '<clipPath id="highcharts-' + num + '-1"><rect x="0" y="0" width="' + swidth + '" height="' + sheight + '"></rect></clipPath>';
-            html += '<clipPath id="highcharts-' + num + '-2" transform="translate(39,6) scale(1 1)"><path d="' + clip2.join(' ') + '"></clipPath>';
-            html += '<clipPath id="highcharts-' + num + '-4"><rect x="0" y="' + z + '" width="' + width + '" height="' + (Math.abs(min * k1)) + '"></rect></clipPath>';
-            html += '<clipPath id="highcharts-' + num + '-5"><rect x="0" y="0" width="' + width + '" height="' + (max * k1) + '"></rect></clipPath></defs>';
-            html += '<rect x="0" y="0" width="' + swidth + '" height="' + sheight + '" strokeWidth="0" fill="transparent"></rect>';
-            html += '<g>' + h3 + '</g><g>' + h4 + '</g><g>' + h1 + '</g><g>' + h2 + '</g>';
-            html += '<g clip-path="url(#highcharts-' + num + '-2)">' + path3.join('') + '</g>';
-            html += '<g>' + path4.join('') + '</g>';
-            html += '<g><g class="highcharts-series" visibility="visible" zIndex="0.1" transform="translate(39,6) scale(1 1)" clip-path="url(#highcharts-' + num + '-1)"><path fill="rgba(194,60,42,0.4)" d="' + path2.join(' ') + '" zIndex="0" clip-path="url(#highcharts-' + num + '-4)"></path><path fill="rgba(146,165,37,0.4)" d="' + path2.join(' ') + '" zIndex="0" clip-path="url(#highcharts-' + num + '-5)"></path><path fill="none" d="' + path1.join(' ') + '" stroke="#C23C2A" stroke-width="3" zIndex="1" stroke-linejoin="round" stroke-linecap="round" clip-path="url(#highcharts-' + num + '-4)"></path><path fill="none" d="' + path1.join(' ') + '" stroke="#92A525" stroke-width="3" zIndex="1" stroke-linejoin="round" stroke-linecap="round" clip-path="url(#highcharts-' + num + '-5)"></path></g></g>';
-            html += '</svg>';
-            
-            $('#chart' + num).html(html);
-        }
 
 
-    },  
-    updated() {
-        const data = {"id":979320,"db_id":6980324435,"winner":4061,"match_data":{"teams":{"t1":{"id":36,"score":12,"win":0,"players":{"93817671":{"team":16,"side":"radiant","id":39380,"nick":"Malady","hero_id":86,"hero_title":"Rubick","k":2,"d":7,"a":9,"l":49,"dn":2,"lvl":14,"gpm":250,"xpm":288,"n":7402,"items":[{"id":188,"title":"Smoke of Deceit"},{"id":102,"title":"Force Staff"},{"id":218,"title":"Observer and Sentry Wards"},{"id":180,"title":"Arcane Boots"},{"id":36,"title":"Magic Wand"},{"id":1076,"title":"Specialist's Array"}],"dmg":17696,"tdmg":0,"heal":864},"152455523":{"team":16,"side":"radiant","id":18028,"nick":"V-Tune","hero_id":4,"hero_title":"Bloodseeker","k":7,"d":4,"a":4,"l":390,"dn":28,"lvl":23,"gpm":661,"xpm":755,"n":25387,"items":[{"id":156,"title":"Satanic"},{"id":50,"title":"Phase Boots"},{"id":116,"title":"Black King Bar"},{"id":147,"title":"Manta Style"},{"id":143,"title":"Skull Basher"},{"id":158,"title":"Mjollnir"},{"id":309,"title":"Mind Breaker"}],"dmg":41036,"tdmg":0,"heal":0},"294135421":{"team":16,"side":"radiant","id":18193,"nick":"Nicky Cool","hero_id":50,"hero_title":"Dazzle","k":0,"d":6,"a":10,"l":242,"dn":5,"lvl":19,"gpm":466,"xpm":506,"n":17843,"items":[{"id":231,"title":"Guardian Greaves"},{"id":244,"title":"Wind Lace"},{"id":36,"title":"Magic Wand"},{"id":226,"title":"Lotus Orb"},{"id":108,"title":"Aghanim's Scepter"},{"id":41,"title":"Bottle"},{"id":676,"title":"Ceremonial Robe"}],"dmg":15978,"tdmg":0,"heal":14075},"175311897":{"team":16,"side":"radiant","id":64352,"nick":"swedenstrong","hero_id":32,"hero_title":"Riki","k":1,"d":3,"a":17,"l":19,"dn":6,"lvl":14,"gpm":198,"xpm":284,"n":6545,"items":[{"id":36,"title":"Magic Wand"},{"id":180,"title":"Arcane Boots"},{"id":102,"title":"Force Staff"},{"id":43,"title":"Sentry Ward"},{"id":57,"title":"Void Stone"},{"id":188,"title":"Smoke of Deceit"},{"id":331,"title":"Vambrace"}],"dmg":7233,"tdmg":0,"heal":186},"117514269":{"team":16,"side":"radiant","id":45930,"nick":"laise","hero_id":92,"hero_title":"Visage","k":2,"d":6,"a":7,"l":171,"dn":12,"lvl":17,"gpm":371,"xpm":408,"n":14288,"items":[{"id":112,"title":"Assault Cuirass"},{"id":908,"title":"Wraith Pact"},{"id":240,"title":"Blight Stone"},{"id":185,"title":"Drum of Endurance"},{"id":36,"title":"Magic Wand"},{"id":214,"title":"Tranquil Boots"},{"id":358,"title":"Dragon Scale"}],"dmg":14224,"tdmg":827,"heal":3007}},"bans":[{"id":53,"title":"Nature's Prophet"},{"id":61,"title":"Broodmother"},{"id":65,"title":"Batrider"},{"id":77,"title":"Lycan"},{"id":105,"title":"Techies"},{"id":97,"title":"Magnus"},{"id":69,"title":"Doom"}],"picks":[{"id":32,"title":"Riki"},{"id":92,"title":"Visage"},{"id":86,"title":"Rubick"},{"id":4,"title":"Bloodseeker"},{"id":50,"title":"Dazzle"}],"tid":16,"title":"Natus Vincere"},"t2":{"id":7422789,"score":26,"win":1,"players":{"134556694":{"team":4061,"side":"dire","id":322,"nick":"Solo","hero_id":83,"hero_title":"Treant Protector","k":0,"d":5,"a":18,"l":53,"dn":6,"lvl":17,"gpm":291,"xpm":405,"n":7173,"items":[{"id":180,"title":"Arcane Boots"},{"id":36,"title":"Magic Wand"},{"id":218,"title":"Observer and Sentry Wards"},{"id":9,"title":"Platemail"},{"id":102,"title":"Force Staff"},{"id":676,"title":"Ceremonial Robe"}],"dmg":11533,"tdmg":805,"heal":9337},"858106446":{"team":4061,"side":"dire","id":50863,"nick":"Kiyotaka","hero_id":106,"hero_title":"Ember Spirit","k":16,"d":1,"a":7,"l":343,"dn":2,"lvl":24,"gpm":689,"xpm":824,"n":28863,"items":[{"id":235,"title":"Octarine Core"},{"id":1466,"title":"Gleipnir"},{"id":116,"title":"Black King Bar"},{"id":119,"title":"Shiva's Guard"},{"id":48,"title":"Boots of Travel"},{"id":311,"title":"Spell Prism"}],"dmg":45011,"tdmg":2597,"heal":0},"161839895":{"team":4061,"side":"dire","id":73788,"nick":"Antares","hero_id":58,"hero_title":"Enchantress","k":1,"d":0,"a":18,"l":206,"dn":2,"lvl":20,"gpm":450,"xpm":555,"n":18415,"items":[{"id":931,"title":"Boots of Bearing"},{"id":263,"title":"Hurricane Pike"},{"id":908,"title":"Wraith Pact"},{"id":75,"title":"Wraith Band"},{"id":33,"title":"Cheese"},{"id":63,"title":"Power Treads"},{"id":949,"title":"Ogre Seal Totem"}],"dmg":14790,"tdmg":6211,"heal":4216},"165564598":{"team":4061,"side":"dire","id":78495,"nick":"MieRo","hero_id":100,"hero_title":"Tusk","k":2,"d":4,"a":16,"l":123,"dn":10,"lvl":19,"gpm":342,"xpm":500,"n":12616,"items":[{"id":242,"title":"Crimson Guard"},{"id":231,"title":"Guardian Greaves"},{"id":11,"title":"Quelling Blade"},{"id":40,"title":"Dust of Appearance"},{"id":36,"title":"Magic Wand"},{"id":574,"title":"Cloak of Flames"}],"dmg":15572,"tdmg":683,"heal":8685},"177411785":{"team":4061,"side":"dire","id":17554,"nick":"Daxak","hero_id":89,"hero_title":"Naga Siren","k":7,"d":2,"a":12,"l":526,"dn":24,"lvl":23,"gpm":836,"xpm":731,"n":29904,"items":[{"id":117,"title":"Aegis of the Immortal"},{"id":116,"title":"Black King Bar"},{"id":114,"title":"Heart of Tarrasque"},{"id":139,"title":"Butterfly"},{"id":147,"title":"Manta Style"},{"id":98,"title":"Orchid Malevolence"},{"id":571,"title":"Trickster Cloak"}],"dmg":23277,"tdmg":7447,"heal":0}},"bans":[{"id":75,"title":"Silencer"},{"id":38,"title":"Beastmaster"},{"id":98,"title":"Timbersaw"},{"id":137,"title":"Primal Beast"},{"id":6,"title":"Drow Ranger"},{"id":22,"title":"Zeus"},{"id":43,"title":"Death Prophet"}],"picks":[{"id":100,"title":"Tusk"},{"id":89,"title":"Naga Siren"},{"id":83,"title":"Treant Protector"},{"id":58,"title":"Enchantress"},{"id":106,"title":"Ember Spirit"}],"tid":4061,"title":"HellRaisers"}},"duration":2404,"gold":{"2404":-25506,"0":2,"60":-187,"120":-161,"180":-6,"240":-562,"300":-291,"360":-550,"420":-634,"480":-1678,"540":-2703,"600":-3708,"660":-5488,"720":-5537,"780":-6404,"840":-7269,"900":-8557,"960":-10524,"1020":-10306,"1080":-11516,"1140":-11431,"1200":-11384,"1260":-11268,"1320":-11531,"1380":-11870,"1440":-12549,"1500":-13533,"1560":-14828,"1620":-15393,"1680":-16559,"1740":-17009,"1800":-19359,"1860":-21988,"1920":-24316,"1980":-20071,"2040":-19506,"2100":-20020,"2160":-20354,"2220":-21925,"2280":-22554,"2340":-21763,"2400":-26578},"ts":{"radiant":{"tower_state":1542,"barracks_state":3},"dire":{"tower_state":2046,"barracks_state":63}},"events":{"0":[{"s":"t2","i":"3","h":[{"s":"t2","t1":106,"t2":50,"t":7}],"g1":382,"g2":722,"d1":930,"d2":979}],"360":[{"s":"t1","i":"3","h":[{"s":"t1","t1":86,"t2":106,"t":392}],"g1":619,"g2":548,"d1":2348,"d2":1588}],"480":[{"s":"t2","i":"3","h":[{"s":"t2","t1":106,"t2":32,"t":468}],"g1":443,"g2":965,"d1":1586,"d2":2124}],"540":[{"s":"t2","i":"3","h":[{"s":"t2","t1":58,"t2":50,"t":528},{"s":"t2","t1":89,"t2":92,"t":532}],"g1":164,"g2":928,"d1":1709,"d2":2656},{"b":["Tier 1 Middle Tower"],"i":"2","s":"t2"}],"600":[{"s":"t2","i":"3","h":[{"s":"t2","t1":106,"t2":86,"t":641}],"g1":609,"g2":1551,"d1":199,"d2":880},{"b":["Tier 1 Bottom Tower"],"i":"2","s":"t2"}],"660":[{"s":"t1","i":"3","h":[{"s":"t1","t1":86,"t2":100,"t":698}],"g1":712,"g2":375,"d1":2595,"d2":3301}],"720":[{"s":"t2","i":"3","h":[{"s":"t2","t1":106,"t2":86,"t":761},{"s":"t2","t1":89,"t2":32,"t":776}],"g1":418,"g2":1457,"d1":318,"d2":1749}],"780":[{"s":"t2","i":"3","h":[{"s":"t2","t1":106,"t2":86,"t":761},{"s":"t2","t1":89,"t2":32,"t":776}],"g1":228,"g2":1583,"d1":188,"d2":1064}],"840":[{"s":"t2","i":"3","h":[{"s":"t2","t1":106,"t2":92,"t":848}],"g1":521,"g2":1177,"d1":1650,"d2":833},{"b":["Tier 2 Bottom Tower"],"i":"2","s":"t2"}],"900":[{"s":"t2","i":"3","h":[{"s":"t2","t1":106,"t2":4,"t":944}],"g1":476,"g2":1826,"d1":275,"d2":1922},{"b":["Tier 1 Top Tower"],"i":"2","s":"t2"}],"1020":[{"a":{"c":"t2","h":"Ember Spirit","s":106},"i":1,"r":{"s":"t2","t1":0,"t2":0}}],"1080":[{"b":["Tier 2 Middle Tower"],"i":"2","s":"t2"}],"1140":[{"s":"t2","i":"3","h":[{"s":"t2","t1":89,"t2":92,"t":1180}],"g1":716,"g2":1345,"d1":1170,"d2":1417}],"1260":[{"s":"t1","i":"3","h":[{"s":"t1","t1":92,"t2":83,"t":1258},{"s":"t1","t1":4,"t2":100,"t":1259}],"g1":1082,"g2":-7,"d1":6954,"d2":4214}],"1740":[{"s":"t2","i":"3","h":[{"s":"t1","t1":4,"t2":83,"t":1711},{"s":"t1","t1":4,"t2":100,"t":1712},{"s":"t2","t1":106,"t2":50,"t":1712},{"s":"t2","t1":89,"t2":92,"t":1714},{"s":"t2","t1":106,"t2":86,"t":1726}],"g1":1316,"g2":2164,"d1":9500,"d2":10058},{"a":{"c":"t2","h":"Ember Spirit","s":106},"i":1,"r":{"s":"t2","t1":0,"t2":0}}],"1800":[{"s":"t2","i":"3","h":[{"s":"t2","t1":89,"t2":4,"t":1792}],"g1":-74,"g2":1458,"d1":4306,"d2":3571},{"b":["Tier 3 Bottom Tower","Tier 3 Middle Tower","npc_dota_goodguys_melee_rax_mid"],"i":"2","s":"t2"}],"1860":[{"b":["npc_dota_goodguys_range_rax_bot"],"i":"2","s":"t2"}],"1920":[{"s":"t1","i":"3","h":[{"s":"t1","t1":4,"t2":89,"t":1942},{"s":"t1","t1":32,"t2":83,"t":1946}],"g1":3028,"g2":-321,"d1":8513,"d2":4929}],"1980":[{"b":["Tier 1 Top Tower"],"i":"2","s":"t1"}],"2040":[{"s":"t2","i":"3","h":[{"s":"t2","t1":89,"t2":86,"t":2059},{"s":"t2","t1":100,"t2":50,"t":2061},{"s":"t1","t1":4,"t2":89,"t":2069},{"s":"t1","t1":4,"t2":83,"t":2075},{"s":"t2","t1":106,"t2":4,"t":2077}],"g1":1365,"g2":1887,"d1":13275,"d2":9640}],"2220":[{"s":"t1","i":"3","h":[{"s":"t1","t1":4,"t2":83,"t":2246},{"s":"t2","t1":89,"t2":86,"t":2254},{"s":"t1","t1":92,"t2":100,"t":2261}],"g1":2016,"g2":1743,"d1":15072,"d2":9262}],"2340":[{"a":{"c":"t2","h":"Naga Siren","s":89},"i":1,"r":{"s":"t2","t1":0,"t2":0}}]},"is_parser":"5"}}
-
-        match_chart(1, data)
+        },
+            updated() {
+            const data = { "id": 979320, "db_id": 6980324435, "winner": 4061, "match_data": { "teams": { "t1": { "id": 36, "score": 12, "win": 0, "players": { "93817671": { "team": 16, "side": "radiant", "id": 39380, "nick": "Malady", "hero_id": 86, "hero_title": "Rubick", "k": 2, "d": 7, "a": 9, "l": 49, "dn": 2, "lvl": 14, "gpm": 250, "xpm": 288, "n": 7402, "items": [{ "id": 188, "title": "Smoke of Deceit" }, { "id": 102, "title": "Force Staff" }, { "id": 218, "title": "Observer and Sentry Wards" }, { "id": 180, "title": "Arcane Boots" }, { "id": 36, "title": "Magic Wand" }, { "id": 1076, "title": "Specialist's Array" }], "dmg": 17696, "tdmg": 0, "heal": 864 }, "152455523": { "team": 16, "side": "radiant", "id": 18028, "nick": "V-Tune", "hero_id": 4, "hero_title": "Bloodseeker", "k": 7, "d": 4, "a": 4, "l": 390, "dn": 28, "lvl": 23, "gpm": 661, "xpm": 755, "n": 25387, "items": [{ "id": 156, "title": "Satanic" }, { "id": 50, "title": "Phase Boots" }, { "id": 116, "title": "Black King Bar" }, { "id": 147, "title": "Manta Style" }, { "id": 143, "title": "Skull Basher" }, { "id": 158, "title": "Mjollnir" }, { "id": 309, "title": "Mind Breaker" }], "dmg": 41036, "tdmg": 0, "heal": 0 }, "294135421": { "team": 16, "side": "radiant", "id": 18193, "nick": "Nicky Cool", "hero_id": 50, "hero_title": "Dazzle", "k": 0, "d": 6, "a": 10, "l": 242, "dn": 5, "lvl": 19, "gpm": 466, "xpm": 506, "n": 17843, "items": [{ "id": 231, "title": "Guardian Greaves" }, { "id": 244, "title": "Wind Lace" }, { "id": 36, "title": "Magic Wand" }, { "id": 226, "title": "Lotus Orb" }, { "id": 108, "title": "Aghanim's Scepter" }, { "id": 41, "title": "Bottle" }, { "id": 676, "title": "Ceremonial Robe" }], "dmg": 15978, "tdmg": 0, "heal": 14075 }, "175311897": { "team": 16, "side": "radiant", "id": 64352, "nick": "swedenstrong", "hero_id": 32, "hero_title": "Riki", "k": 1, "d": 3, "a": 17, "l": 19, "dn": 6, "lvl": 14, "gpm": 198, "xpm": 284, "n": 6545, "items": [{ "id": 36, "title": "Magic Wand" }, { "id": 180, "title": "Arcane Boots" }, { "id": 102, "title": "Force Staff" }, { "id": 43, "title": "Sentry Ward" }, { "id": 57, "title": "Void Stone" }, { "id": 188, "title": "Smoke of Deceit" }, { "id": 331, "title": "Vambrace" }], "dmg": 7233, "tdmg": 0, "heal": 186 }, "117514269": { "team": 16, "side": "radiant", "id": 45930, "nick": "laise", "hero_id": 92, "hero_title": "Visage", "k": 2, "d": 6, "a": 7, "l": 171, "dn": 12, "lvl": 17, "gpm": 371, "xpm": 408, "n": 14288, "items": [{ "id": 112, "title": "Assault Cuirass" }, { "id": 908, "title": "Wraith Pact" }, { "id": 240, "title": "Blight Stone" }, { "id": 185, "title": "Drum of Endurance" }, { "id": 36, "title": "Magic Wand" }, { "id": 214, "title": "Tranquil Boots" }, { "id": 358, "title": "Dragon Scale" }], "dmg": 14224, "tdmg": 827, "heal": 3007 } }, "bans": [{ "id": 53, "title": "Nature's Prophet" }, { "id": 61, "title": "Broodmother" }, { "id": 65, "title": "Batrider" }, { "id": 77, "title": "Lycan" }, { "id": 105, "title": "Techies" }, { "id": 97, "title": "Magnus" }, { "id": 69, "title": "Doom" }], "picks": [{ "id": 32, "title": "Riki" }, { "id": 92, "title": "Visage" }, { "id": 86, "title": "Rubick" }, { "id": 4, "title": "Bloodseeker" }, { "id": 50, "title": "Dazzle" }], "tid": 16, "title": "Natus Vincere" }, "t2": { "id": 7422789, "score": 26, "win": 1, "players": { "134556694": { "team": 4061, "side": "dire", "id": 322, "nick": "Solo", "hero_id": 83, "hero_title": "Treant Protector", "k": 0, "d": 5, "a": 18, "l": 53, "dn": 6, "lvl": 17, "gpm": 291, "xpm": 405, "n": 7173, "items": [{ "id": 180, "title": "Arcane Boots" }, { "id": 36, "title": "Magic Wand" }, { "id": 218, "title": "Observer and Sentry Wards" }, { "id": 9, "title": "Platemail" }, { "id": 102, "title": "Force Staff" }, { "id": 676, "title": "Ceremonial Robe" }], "dmg": 11533, "tdmg": 805, "heal": 9337 }, "858106446": { "team": 4061, "side": "dire", "id": 50863, "nick": "Kiyotaka", "hero_id": 106, "hero_title": "Ember Spirit", "k": 16, "d": 1, "a": 7, "l": 343, "dn": 2, "lvl": 24, "gpm": 689, "xpm": 824, "n": 28863, "items": [{ "id": 235, "title": "Octarine Core" }, { "id": 1466, "title": "Gleipnir" }, { "id": 116, "title": "Black King Bar" }, { "id": 119, "title": "Shiva's Guard" }, { "id": 48, "title": "Boots of Travel" }, { "id": 311, "title": "Spell Prism" }], "dmg": 45011, "tdmg": 2597, "heal": 0 }, "161839895": { "team": 4061, "side": "dire", "id": 73788, "nick": "Antares", "hero_id": 58, "hero_title": "Enchantress", "k": 1, "d": 0, "a": 18, "l": 206, "dn": 2, "lvl": 20, "gpm": 450, "xpm": 555, "n": 18415, "items": [{ "id": 931, "title": "Boots of Bearing" }, { "id": 263, "title": "Hurricane Pike" }, { "id": 908, "title": "Wraith Pact" }, { "id": 75, "title": "Wraith Band" }, { "id": 33, "title": "Cheese" }, { "id": 63, "title": "Power Treads" }, { "id": 949, "title": "Ogre Seal Totem" }], "dmg": 14790, "tdmg": 6211, "heal": 4216 }, "165564598": { "team": 4061, "side": "dire", "id": 78495, "nick": "MieRo", "hero_id": 100, "hero_title": "Tusk", "k": 2, "d": 4, "a": 16, "l": 123, "dn": 10, "lvl": 19, "gpm": 342, "xpm": 500, "n": 12616, "items": [{ "id": 242, "title": "Crimson Guard" }, { "id": 231, "title": "Guardian Greaves" }, { "id": 11, "title": "Quelling Blade" }, { "id": 40, "title": "Dust of Appearance" }, { "id": 36, "title": "Magic Wand" }, { "id": 574, "title": "Cloak of Flames" }], "dmg": 15572, "tdmg": 683, "heal": 8685 }, "177411785": { "team": 4061, "side": "dire", "id": 17554, "nick": "Daxak", "hero_id": 89, "hero_title": "Naga Siren", "k": 7, "d": 2, "a": 12, "l": 526, "dn": 24, "lvl": 23, "gpm": 836, "xpm": 731, "n": 29904, "items": [{ "id": 117, "title": "Aegis of the Immortal" }, { "id": 116, "title": "Black King Bar" }, { "id": 114, "title": "Heart of Tarrasque" }, { "id": 139, "title": "Butterfly" }, { "id": 147, "title": "Manta Style" }, { "id": 98, "title": "Orchid Malevolence" }, { "id": 571, "title": "Trickster Cloak" }], "dmg": 23277, "tdmg": 7447, "heal": 0 } }, "bans": [{ "id": 75, "title": "Silencer" }, { "id": 38, "title": "Beastmaster" }, { "id": 98, "title": "Timbersaw" }, { "id": 137, "title": "Primal Beast" }, { "id": 6, "title": "Drow Ranger" }, { "id": 22, "title": "Zeus" }, { "id": 43, "title": "Death Prophet" }], "picks": [{ "id": 100, "title": "Tusk" }, { "id": 89, "title": "Naga Siren" }, { "id": 83, "title": "Treant Protector" }, { "id": 58, "title": "Enchantress" }, { "id": 106, "title": "Ember Spirit" }], "tid": 4061, "title": "HellRaisers" } }, "duration": 2404, "gold": { "2404": -25506, "0": 2, "60": -187, "120": -161, "180": -6, "240": -562, "300": -291, "360": -550, "420": -634, "480": -1678, "540": -2703, "600": -3708, "660": -5488, "720": -5537, "780": -6404, "840": -7269, "900": -8557, "960": -10524, "1020": -10306, "1080": -11516, "1140": -11431, "1200": -11384, "1260": -11268, "1320": -11531, "1380": -11870, "1440": -12549, "1500": -13533, "1560": -14828, "1620": -15393, "1680": -16559, "1740": -17009, "1800": -19359, "1860": -21988, "1920": -24316, "1980": -20071, "2040": -19506, "2100": -20020, "2160": -20354, "2220": -21925, "2280": -22554, "2340": -21763, "2400": -26578 }, "ts": { "radiant": { "tower_state": 1542, "barracks_state": 3 }, "dire": { "tower_state": 2046, "barracks_state": 63 } }, "events": { "0": [{ "s": "t2", "i": "3", "h": [{ "s": "t2", "t1": 106, "t2": 50, "t": 7 }], "g1": 382, "g2": 722, "d1": 930, "d2": 979 }], "360": [{ "s": "t1", "i": "3", "h": [{ "s": "t1", "t1": 86, "t2": 106, "t": 392 }], "g1": 619, "g2": 548, "d1": 2348, "d2": 1588 }], "480": [{ "s": "t2", "i": "3", "h": [{ "s": "t2", "t1": 106, "t2": 32, "t": 468 }], "g1": 443, "g2": 965, "d1": 1586, "d2": 2124 }], "540": [{ "s": "t2", "i": "3", "h": [{ "s": "t2", "t1": 58, "t2": 50, "t": 528 }, { "s": "t2", "t1": 89, "t2": 92, "t": 532 }], "g1": 164, "g2": 928, "d1": 1709, "d2": 2656 }, { "b": ["Tier 1 Middle Tower"], "i": "2", "s": "t2" }], "600": [{ "s": "t2", "i": "3", "h": [{ "s": "t2", "t1": 106, "t2": 86, "t": 641 }], "g1": 609, "g2": 1551, "d1": 199, "d2": 880 }, { "b": ["Tier 1 Bottom Tower"], "i": "2", "s": "t2" }], "660": [{ "s": "t1", "i": "3", "h": [{ "s": "t1", "t1": 86, "t2": 100, "t": 698 }], "g1": 712, "g2": 375, "d1": 2595, "d2": 3301 }], "720": [{ "s": "t2", "i": "3", "h": [{ "s": "t2", "t1": 106, "t2": 86, "t": 761 }, { "s": "t2", "t1": 89, "t2": 32, "t": 776 }], "g1": 418, "g2": 1457, "d1": 318, "d2": 1749 }], "780": [{ "s": "t2", "i": "3", "h": [{ "s": "t2", "t1": 106, "t2": 86, "t": 761 }, { "s": "t2", "t1": 89, "t2": 32, "t": 776 }], "g1": 228, "g2": 1583, "d1": 188, "d2": 1064 }], "840": [{ "s": "t2", "i": "3", "h": [{ "s": "t2", "t1": 106, "t2": 92, "t": 848 }], "g1": 521, "g2": 1177, "d1": 1650, "d2": 833 }, { "b": ["Tier 2 Bottom Tower"], "i": "2", "s": "t2" }], "900": [{ "s": "t2", "i": "3", "h": [{ "s": "t2", "t1": 106, "t2": 4, "t": 944 }], "g1": 476, "g2": 1826, "d1": 275, "d2": 1922 }, { "b": ["Tier 1 Top Tower"], "i": "2", "s": "t2" }], "1020": [{ "a": { "c": "t2", "h": "Ember Spirit", "s": 106 }, "i": 1, "r": { "s": "t2", "t1": 0, "t2": 0 } }], "1080": [{ "b": ["Tier 2 Middle Tower"], "i": "2", "s": "t2" }], "1140": [{ "s": "t2", "i": "3", "h": [{ "s": "t2", "t1": 89, "t2": 92, "t": 1180 }], "g1": 716, "g2": 1345, "d1": 1170, "d2": 1417 }], "1260": [{ "s": "t1", "i": "3", "h": [{ "s": "t1", "t1": 92, "t2": 83, "t": 1258 }, { "s": "t1", "t1": 4, "t2": 100, "t": 1259 }], "g1": 1082, "g2": -7, "d1": 6954, "d2": 4214 }], "1740": [{ "s": "t2", "i": "3", "h": [{ "s": "t1", "t1": 4, "t2": 83, "t": 1711 }, { "s": "t1", "t1": 4, "t2": 100, "t": 1712 }, { "s": "t2", "t1": 106, "t2": 50, "t": 1712 }, { "s": "t2", "t1": 89, "t2": 92, "t": 1714 }, { "s": "t2", "t1": 106, "t2": 86, "t": 1726 }], "g1": 1316, "g2": 2164, "d1": 9500, "d2": 10058 }, { "a": { "c": "t2", "h": "Ember Spirit", "s": 106 }, "i": 1, "r": { "s": "t2", "t1": 0, "t2": 0 } }], "1800": [{ "s": "t2", "i": "3", "h": [{ "s": "t2", "t1": 89, "t2": 4, "t": 1792 }], "g1": -74, "g2": 1458, "d1": 4306, "d2": 3571 }, { "b": ["Tier 3 Bottom Tower", "Tier 3 Middle Tower", "npc_dota_goodguys_melee_rax_mid"], "i": "2", "s": "t2" }], "1860": [{ "b": ["npc_dota_goodguys_range_rax_bot"], "i": "2", "s": "t2" }], "1920": [{ "s": "t1", "i": "3", "h": [{ "s": "t1", "t1": 4, "t2": 89, "t": 1942 }, { "s": "t1", "t1": 32, "t2": 83, "t": 1946 }], "g1": 3028, "g2": -321, "d1": 8513, "d2": 4929 }], "1980": [{ "b": ["Tier 1 Top Tower"], "i": "2", "s": "t1" }], "2040": [{ "s": "t2", "i": "3", "h": [{ "s": "t2", "t1": 89, "t2": 86, "t": 2059 }, { "s": "t2", "t1": 100, "t2": 50, "t": 2061 }, { "s": "t1", "t1": 4, "t2": 89, "t": 2069 }, { "s": "t1", "t1": 4, "t2": 83, "t": 2075 }, { "s": "t2", "t1": 106, "t2": 4, "t": 2077 }], "g1": 1365, "g2": 1887, "d1": 13275, "d2": 9640 }], "2220": [{ "s": "t1", "i": "3", "h": [{ "s": "t1", "t1": 4, "t2": 83, "t": 2246 }, { "s": "t2", "t1": 89, "t2": 86, "t": 2254 }, { "s": "t1", "t1": 92, "t2": 100, "t": 2261 }], "g1": 2016, "g2": 1743, "d1": 15072, "d2": 9262 }], "2340": [{ "a": { "c": "t2", "h": "Naga Siren", "s": 89 }, "i": 1, "r": { "s": "t2", "t1": 0, "t2": 0 } }] }, "is_parser": "5" } }
+        //$('.tt').tooltip('dispose');
+            match_chart(1, data.match_data)
     },
 
 
-    
+
 };
 
 </script>
+
+<style lang="scss">
+.tippy-content{
+    padding: 2px 9px;
+}
+.tippy-box {
+    background-color: #18273b;
+    color: #8397b3;
+    box-shadow: 4px 5px 17px #00000094;
+}
+.tippy-arrow {
+    color: #18273b;
+}
+
+.ttlined {
+  border-bottom: 1px dashed;
+  cursor: help;
+}
+
+.ttsidered {
+    text-align: center;
+}
+
+.ttsidered,
+.ttsideblue,
+.ttsidegreen {
+  max-width: 200px;
+}
+
+.ttsidered,
+.ttsideblue,
+.ttsidegreen,
+.ttside {
+  padding: 2px 2px;
+  border-left: 3px solid transparent;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+
+  &:nth-child(even) {
+    background: #ffffff0a;
+  }
+
+  &:first-child {
+    border-radius: 2px 0 0 0;
+  }
+
+  &:last-child {
+    border-radius: 0 0 0 2px;
+  }
+
+  img {
+    border-radius: 2px;
+  }
+
+  > span {
+    font-size: 0.67rem;
+    img {
+      max-height: 30px;
+    }
+  }
+  em {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 0.67rem;
+  }
+  div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 40px;
+    text-align: center;
+    i {
+      text-decoration: none;
+      font-style: normal;
+      font-size: 10px;
+    }
+  }
+
+  s {
+    width: 40px;
+    height: 15px;
+    background: url(https://escorenews.com/img/ico/swords3.svg) no-repeat center;
+    background-size: contain;
+    text-decoration: none;
+  }
+  sup {
+    font-size: 0.9rem;
+    line-height: 0.9rem;
+    width: 2rem;
+    height: 1rem;
+    //font-family: $ico;
+    font-weight: bold;
+    top: auto;
+    &:after {
+      content: "";
+    }
+  }
+  .icon {
+    max-height: 1.5rem;
+    width: 1.5rem;
+    display: inline-flex;
+    img {
+      width: 100%;
+    }
+  }
+  small {
+    font-size: 90%;
+    background: rgba(249, 240, 237, 0.25);
+    white-space: nowrap;
+    padding: 0.28rem 0;
+    min-height: 1.5rem;
+    width: 20%;
+  }
+  .strike {
+    font-weight: bold;
+    color: #f8ff75;
+    display: block;
+    text-align: center;
+    width: 100%;
+    line-height: 1.5rem;
+    text-decoration: line-through;
+  }
+}
+
+.ttgraph {
+  margin: -0.1rem -0.5rem;
+
+  > b,
+  > u {
+    text-decoration: none;
+    display: flex;
+    background: #fef7e90e;
+    align-content: center;
+    align-items: center;
+
+    border-left: 3px solid #82AC4E;
+    border-right: 3px solid #EB5757;
+    border-radius: 2px 2px 0 0;
+    padding: 0;
+    &.ttsideblue {
+      border-left:rgb(0, 133, 190) 3px solid;
+      border-right: #EB5757 3px solid;
+    }
+
+    i {
+      font-size: 0.67rem;
+      width: 40%;
+      text-align: center;
+      font-style: normal;
+      font-weight: bold;
+
+      &:first-child {
+        text-align: right;
+      }
+      &:last-child {
+        text-align: left;
+      }
+    }
+
+    s {
+      width: 1rem;
+      height: 1rem;
+      margin: 0.3rem 0.7rem;
+      background: url(https://escorenews.com/img/ico/gold.png) no-repeat center;
+      background-size: contain;
+      text-decoration: none;
+    }
+  }
+
+  > u {
+    border-radius: 0 0 0 0;
+    background: #ff000015;
+
+    s {
+      background: url(https://escorenews.com/img/ico/dmg.svg) no-repeat center;
+      background-size: contain;
+    }
+  }
+
+  em {
+    .fa {
+      margin-right: 0.3rem;
+    }
+    img {
+      max-height: 1rem;
+      width: auto;
+    }
+  }
+}
+
+.ttsidered {
+  border-color: #EB5757;
+}
+
+.ttsideblue {
+  border-color:rgb(0, 133, 190);
+}
+
+.ttsidegreen {
+  border-color: #82AC4E;
+}
+
+.ttsidegray {
+  border-color: #707070;
+}
+
+.ttsidest {
+  border-color: rgb(129, 10, 10);
+}
+.ttpubg2 {
+  background: #eaedee15;
+  border-radius: 2px;
+  margin: 0.2rem 0;
+  padding: 0.3rem;
+}
+.ttpubg {
+  margin: -0.1rem -0.5rem;
+  background: #7faec32a;
+  color: #fff;
+  min-width: 22rem;
+  border-radius: 2px;
+
+  .ttside {
+    padding: 0;
+    justify-content: space-between;
+  }
+
+  > div > span {
+
+    flex-grow: 1;
+    padding: 0 0.2rem;
+    display: inline-block;
+    width: auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    &:first-child {
+      text-align: right;
+    }
+    &:last-child {
+      text-align: left;
+    }
+  }
+  .pubgi {
+    width: 4rem;
+    span {
+      display: block;
+      height: 1rem;
+      img {
+        max-width: 90%;
+        max-height: 100%;
+        width: auto;
+        transform: scale(-1, 1);
+      }
+    }
+    i {
+      font-size: 0.55rem !important;
+      color: #fff !important;
+    }
+  }
+  .idnbogray,
+  .idnbored,
+  .ideath {
+    border-radius: 3px;
+    margin-right: 0.5rem;
+    margin-top: 0.1rem;
+    margin-bottom: 0.1rem;
+    img {
+      width: 1.6rem !important;
+    }
+  }
+  .idnbogray {
+    background: #999;
+  }
+  .idnbored {
+    background: #ff0000;
+  }
+  .ideath {
+    background: #9c0000;
+  }
+}
+
+.ttsidered,
+.ttsideblue,
+.ttsidegreen {
+  .ro {
+    display: flex;
+    flex-direction: row;
+    margin: -0.3rem -0.5rem;
+    align-items: center;
+    border-bottom: 1px solid #f1f1f1;
+    border-top: 1px solid #f1f1f1;
+    width: calc(100% + 0.6rem);
+
+    b {
+      width: 50%;
+      height: 2.2rem;
+      margin: 0;
+      background: url(https://escorenews.com/img/ico/roshan.png) no-repeat center;
+      background-size: contain;
+      text-decoration: none;
+    }
+    > div {
+      display: flex;
+      flex-direction: column;
+      width: 63%;
+      span {
+        display: flex;
+        padding: 0.1rem 0;
+        align-content: center;
+        align-items: center;
+
+        &:first-child {
+          border-right: 3px solid #82AC4E;
+        }
+
+        &:last-child {
+          border-right: 3px solid #EB5757;
+        }
+
+        s {
+          display: block;
+          float: left;
+          width: 1rem;
+          height: 1rem;
+          margin: 0.1rem;
+          margin-right: 0.5rem;
+          background: url(https://escorenews.com/img/ico/swords3.svg) no-repeat center;
+          background-size: contain;
+          text-decoration: none;
+        }
+        i {
+          font-size: 0.67rem;
+          display: block;
+          width: 2.8rem;
+          text-align: center;
+          font-style: normal;
+          font-weight: bold;
+          margin: 0.1rem 0;
+          text-align: left;
+        }
+      }
+    }
+  }
+  .aegis {
+    img {
+      height: 1.7rem;
+      width: auto;
+    }
+  }
+}
+
+.circle-light {
+  fill: #92a525;
+}
+
+.comparetip {
+  .un {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #eee;
+  }
+  .text-muted {
+    font-size: 0.67rem;
+    margin-top: 0.1rem;
+  }
+  b {
+  }
+}
+
+</style>
