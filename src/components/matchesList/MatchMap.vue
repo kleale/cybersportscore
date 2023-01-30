@@ -3,7 +3,7 @@
         <img class="w-[136px]" src="../../assets/dumb/map.png" alt="map" />
         <div class="flex w-[141px] justify-center items-center gap-3 pt-5">
             <div class="flex w-[24px] h-[29px] relative" data-tooltip-target="tooltip-default">
-                <div class="absolute font-bold text-[12px] w-full text-center top-[1px] text-[#EB5757]">
+                <div class="absolute font-bold text-[10px] w-full text-center top-[1px] text-[#EB5757]">
                     FB
                 </div>
                 <svg width="24" height="31" viewBox="0 0 24 31" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -20,7 +20,7 @@
             </div>
 
             <div class="flex w-[24px] h-[29px] relative">
-                <div class="absolute font-bold text-[12px] w-full text-center top-[1px] text-apple">
+                <div class="absolute font-bold text-[10px] w-full text-center top-[1px] text-apple">
                     F10
                 </div>
                 <svg width="24" height="31" viewBox="0 0 24 31" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -31,7 +31,7 @@
             </div>
 
             <div class="flex w-[24px] h-[29px] relative">
-                <div class="absolute font-bold text-[12px] w-full text-center top-[1px] text-[#637488]">
+                <div class="absolute font-bold text-[10px] w-full text-center top-[1px] text-[#637488]">
                     T1
                 </div>
                 <svg width="24" height="31" viewBox="0 0 24 31" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -42,7 +42,7 @@
             </div>
 
             <div class="flex w-[24px] h-[29px] relative">
-                <div class="absolute font-bold text-[12px] w-full text-center top-[1px] text-[#637488]">
+                <div class="absolute font-bold text-[10px] w-full text-center top-[1px] text-[#637488]">
                     R
                 </div>
                 <svg width="24" height="31" viewBox="0 0 24 31" fill="none" xmlns="http://www.w3.org/2000/svg">
