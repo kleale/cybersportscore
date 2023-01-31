@@ -10,7 +10,7 @@
     <div class="flex flex-1 w-full grow justify-center items-center">
       <div class="flex w-full border border-gray-300 dark:border-gray-700 rounded p-2">
         <div class="w-full h-[180px]">
-          <MatchChart />
+          <!-- <MatchChart /> -->
         </div>
       </div>
     </div>
