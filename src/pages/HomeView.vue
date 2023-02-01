@@ -4,7 +4,7 @@
         <div class="col-span-5 md:col-span-5">
             <MatchesList />
         </div>
-        <!-- <div class="col-span-4 md:col-span-1">
+        <div class="col-span-4 md:col-span-1">
             <NewsBlock />
             <div id="dropdown-cta" class="p-4 mt-6 bg-blue-50 rounded-lg dark:bg-blue-900" role="alert">
                 <div class="flex items-center mb-3"><span
@@ -22,7 +22,7 @@
                     class="text-sm text-blue-900 underline hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300"
                     href="#">Ссылка</a>
             </div>
-        </div> -->
+        </div> 
     </div>
 </template>
 

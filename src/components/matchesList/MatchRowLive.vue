@@ -3,7 +3,7 @@ import { ChevronDownIcon, ChevronRightIcon, ClockIcon } from '@heroicons/vue/20/
 </script>
 
 <template>
-  <div class="flex border-t border-dashed border-gray-700 odd:bg-odd first:border-0 drop-shadow-md z-10 border-l-4 border-red-500">
+  <div class="flex border-t border-dashed  odd:bg-odd first:border-0 drop-shadow-md z-10 border-l-4 border-red-500">
     <div class="flex grow items-center">
       <div class="flex items-start md:items-center py-1 pl-2 md:pl-4 w-[70px] md:w-36 flex-col md:flex-row">
         <img class="h-5" src="../../assets/games/d2.svg" alt="gameName" />
