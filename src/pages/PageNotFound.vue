@@ -3,8 +3,8 @@
 </script>
 
 <template>
-  <div class="max-w-6xl bg-gray-800 grow w-full flex items-center justify-center" style="margin: 0 auto">
-    <main aria-labelledby="pageTitle" class="flex items-center justify-center dark:text-light">
+  <div class="max-w-6xl bg-gray-800 flex grow w-full items-center justify-center" style="margin: 0 auto">
+    <main aria-labelledby="pageTitle" class="items-center justify-center dark:text-light">
       <div class="p-4 space-y-4">
         <div class="flex flex-col items-start space-y-3 sm:flex-row sm:space-y-0 sm:items-center sm:space-x-3">
           <p class="font-semibold text-red-500 text-9xl dark:text-apple">404</p>
@@ -15,7 +15,7 @@
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                   d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
               </svg>
-              <span class="text-xl font-medium text-gray-600 sm:text-2xl dark:text-light">
+              <span class="text-xl font-medium text-gray-600 sm:text-2xl dark:text-gray-200">
                 Oops! Page not found.
               </span>
             </h1>
@@ -53,32 +53,4 @@
 
 <style scoped>
 
-</style>
-
-
-<!-- component -->
-<style>
-/* This example part of kwd-dashboard see https://kamona-wd.github.io/kwd-dashboard/ */
-/* So here we will write some classes to simulate dark mode and tailwind css config in our project */
-:root {
-  --light: #edf2f9;
-  --dark: #152e4d;
-  --darker: #12263f;
-}
-
-.dark .dark\:text-light {
-  color: var(--light);
-}
-
-.dark .dark\:bg-dark {
-  background-color: var(--dark);
-}
-
-.dark .dark\:bg-darker {
-  background-color: var(--darker);
-}
-
-.dark .dark\:text-gray-300 {
-  color: #D1D5DB;
-}
 </style>
