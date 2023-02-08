@@ -9,7 +9,7 @@ import BnrCatFish from './components/layout/bnrCatFish.vue';
   <Branding />
   <BnrCatFish />
   
-  <div class="max-w-6xl relative" style="margin: 0 auto">
+  <div class="max-w-6xl relative flex flex-col" style="margin: 0 auto">
     <NavBar />
     <RouterView />
     <div class="p-3 max-w-6xl bg-gray-800" style="margin: 0 auto">

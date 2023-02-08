@@ -4,6 +4,8 @@ import LoginView from "../pages/LoginView.vue"
 import MatchView from '../pages/MatchView.vue'
 import NewsListView from '../pages/NewsListView.vue'
 import NewsPageView from '../pages/NewsPageView.vue'
+import PageNotFound from '../pages/PageNotFound.vue'
+
 
 console.log(import.meta.env.BASE_URL)
 
@@ -35,7 +37,8 @@ const router = createRouter({
             path: '/newspage',
             name: 'newspage',
             component: NewsPageView
-        }
+        },
+        { path: '/:pathMatch(.*)*', name: 'not-found', component: PageNotFound },
     ]
 })
 
