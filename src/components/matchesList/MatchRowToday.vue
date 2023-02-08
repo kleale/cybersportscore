@@ -29,11 +29,11 @@ import { ChevronDownIcon, ChevronRightIcon, ClockIcon } from '@heroicons/vue/20/
         <div
           class="flex justify-center items-center px-1 border-x border-gray-300 dark:border-gray-700 flex-col w-16 md:w-20 md:h-10 md:px-2">
           <a href="https://betboom.ru/"
-            class="text-[11px] text-black text-center leading-none font-extrabold bg-yellow-300 rounded-full px-1 py-1 mb-1 w-[25px]">
+            class="text-[11px] text-black text-center leading-none font-extrabold border border-gray-600 rounded-full px-2 py-1 mb-1 w-[35px]">
             <!-- BB -->
             <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
               x="0px" y="0px" viewBox="0 0 49.5 31" style="enable-background:new 0 0 49.5 31;" xml:space="preserve">
-              <path fill="#000000" d="M49.5,21.9c0.1,2.5-0.9,4.9-2.8,6.6c-2.1,1.7-4.8,2.6-7.6,2.5H26V0h12.2c6.2,0,10.2,3.4,10.2,8.8
+              <path fill="#f7e700" d="M49.5,21.9c0.1,2.5-0.9,4.9-2.8,6.6c-2.1,1.7-4.8,2.6-7.6,2.5H26V0h12.2c6.2,0,10.2,3.4,10.2,8.8
 	c0.1,2.4-1,4.7-2.9,6.2C48.1,16.4,49.6,19.1,49.5,21.9 M33.9,7.1V12H38c1.3,0.1,2.4-0.9,2.5-2.2c0-0.1,0-0.2,0-0.3
 	c0.1-1.3-1-2.4-2.3-2.5c-0.1,0-0.2,0-0.3,0H33.9z M38.8,23.9c1.4,0,2.6-1.2,2.6-2.6c0-1.4-1.2-2.6-2.6-2.6c0,0,0,0,0,0h-4.9v5.2
 	H38.8z" />
