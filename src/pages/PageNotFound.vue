@@ -24,9 +24,8 @@
             </p>
             <p class="text-base font-normal text-gray-600 dark:text-gray-300">
               You may return to
-              <a href="https://kamona-wd.github.io/kwd-dashboard/"
-                class="text-blue-600 hover:underline dark:text-indigo-500">home page</a> or try
-              using the search form.
+              <a href="/" class="text-blue-600 hover:underline dark:text-indigo-500">
+                home page</a> or try using the search form.
             </p>
           </div>
         </div>
@@ -51,6 +50,4 @@
   </div>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>
